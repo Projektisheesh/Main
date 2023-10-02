@@ -1,9 +1,7 @@
-@layer base {
-  .navbar {
-  }
-}
+
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @tailwindcss aspect-ratio;
+
