@@ -16,7 +16,7 @@ module.exports = {
         "bg-image": "url('../dist/img/bg.jpeg')",
       },
       fontFamily: {
-        'roboto-mono': ['Roboto Mono', 'monospace'],
+        body: ["Roboto Mono", "monospace"],
       },
       colors: {
         "mm-orange": "rgba(255,92,0,0)",
