@@ -9,13 +9,17 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
     <script src="./js/menu.js"></script>
+    <script defer src="chat.js"></script>
+
 
 
 </head>
 
-<body class="bg-black">
-    <nav class="p-5 shadow md:flex w-[100%] md:items-center  md:justify-between z-20 sticky ">
+<body class="bg-black flex flex-col h-full">
+    <nav class="p-5 shadow md:flex w-[100%] md:items-center md:justify-between z-20 sticky ">
 
         <div class="flex justify-between items-center ">
             <span class=" cursor-pointer text-white">
@@ -36,7 +40,7 @@
                 <a href="#" class="text-2xl  hover:text-orange-500  ">PROGRAM</a>
             </li>
             <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
-                <a href="#" class="text-2xl hover:text-orange-500  ">INFO</a>
+                <a href="info.html" class="text-2xl hover:text-orange-500  ">INFO</a>
             </li>
             <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in ">
                 <a href="./contact.html" class="text-2xl  hover:text-orange-500  ">CONTACT</a>
@@ -46,9 +50,9 @@
     </nav>
 
 
-    <section>
-        <div class="flex items-center justify-center px-12 lg:p-12">
-            <video id="my-video" class="video-js" width="1000px" height="auto" autoplay muted data-setup="{}">
+    <section class="flex flex-col items-center justify-center flex-1">
+        <div class="flex-col items-center justify-center px-12 lg:p-12 mb-10">
+            <video class=" object-cover border-4 border-orange-500 rounded-lg" autoplay controls loop muted>
                 <source src="./video/M09-1317.mp4" type="video/mp4" />
                 <p class="vjs-no-js">
                     To view this video please enable JavaScript, and consider upgrading to a
@@ -59,14 +63,19 @@
                 <link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet">
 
             </video>
-        </div>
-        <div class=" flex items-center justify-center p-1 px-12 md:p-12 lg:p-12">
+            <div class="p-2 text-white flex-grow">
+                <ul class=" text-white justify-start bg-black mb-4 ring-4 ring-mm-orange p-2 rounded-lg
+            w-auto h-auto" id="messages">
+                </ul>
+            </div>
+            <br>
             <form id="chat-message-input" action="">
-                <div class="p-2 flex flex-wrap justify-center">
+                <div class="pt-12 flex flex-wrap justify-center">
                     <input id="message" type="text" placeholder="What's on your mind?"
                         class="text-white text-xs md:text-lg lg:text-lg text-center justify-start bg-black rounded-full border-4 border-orange-500 p-3 h-auto">
 
             </form>
+        </div>
         </div>
     </section>
 
