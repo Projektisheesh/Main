@@ -6,128 +6,92 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/dist/output.css" rel="stylesheet">
-    <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
-    <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/menu.js"></script>
 
 
 </head>
 
 <body class="bg-black">
-    <nav class="sticky top-0 z-50 bg-black pt-5">
-        <div class=" max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-5 py-5 ">
-            <a href="./index.html" class="flex items-center">
-                <img src="./img/header.png" class="h-10 px-1" alt="metropolia cine" />
-            </a>
-            <button onclick="toggleMenu()" type="button"
-                class="inline-flex items-center justify-center p-1 px-2 py-2 text-sm rounded-lg text-white hover:bg-mm-orange focus:outline-none focus:ring focus:ring-mm-orange"
-                aria-expanded="false">
+    <nav class="p-5 shadow md:flex w-[100%] md:items-center  md:justify-between z-20 sticky ">
 
-                <svg xmlns="http://www.w3.org/2000/svg" width="0.411111in" height="0.288889in" viewBox="0 0 37 26">
-                    <path src="/dist/img/burger.svg" fill=" white" stroke=" white" stroke-width="0" d="M 34.00,20.00
-                         C 35.66,20.00 37.00,21.34 37.00,23.00
-                           37.00,23.00 37.00,23.00 37.00,23.00
-                           37.00,24.66 35.66,26.00 34.00,26.00
-                           34.00,26.00 3.00,26.00 3.00,26.00
-                           1.34,26.00 0.00,24.66 0.00,23.00
-                           0.00,23.00 0.00,23.00 0.00,23.00
-                           0.00,21.34 1.34,20.00 3.00,20.00
-                           3.00,20.00 34.00,20.00 34.00,20.00 Z
-                         M 29.00,0.00
-                         C 30.66,-0.00 32.00,1.34 32.00,3.00
-                           32.00,3.00 32.00,3.00 32.00,3.00
-                           32.00,4.66 30.66,6.00 29.00,6.00
-                           29.00,6.00 3.00,6.00 3.00,6.00
-                           1.34,6.00 0.00,4.66 0.00,3.00
-                           0.00,3.00 0.00,3.00 0.00,3.00
-                           0.00,1.34 1.34,0.00 3.00,0.00
-                           3.00,0.00 29.00,0.00 29.00,0.00 Z
-                         M 23.00,10.00
-                         C 24.66,10.00 26.00,11.34 26.00,13.00
-                           26.00,13.00 26.00,13.00 26.00,13.00
-                           26.00,14.66 24.66,16.00 23.00,16.00
-                           23.00,16.00 3.00,16.00 3.00,16.00
-                           1.34,16.00 0.00,14.66 0.00,13.00
-                           0.00,13.00 0.00,13.00 0.00,13.00
-                           0.00,11.34 1.34,10.00 3.00,10.00
-                           3.00,10.00 23.00,10.00 23.00,10.00 Z" />
-                </svg>
-            </button>
+        <div class="flex justify-between items-center ">
+            <span class=" cursor-pointer text-white">
+                <a href="./index.html">
+                    <img class="h-10 xs:h-12 sm:h-14 lg:h-16 xl:h-20  inline transform hover:scale-105 ease-out duration-1000"
+                        src="./img/header.png" alt="Logo">
+                </a>
+            </span>
+
+            <span class="text-3xl cursor-pointer mx-2 md:hidden block text-white ">
+                <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+            </span>
         </div>
-        <div class="fixed inset-0 flex items-center justify-center bg-black text-white transform translate-x-full transition-transform duration-300 ease-in-out"
-            id="navbar-hamburger">
-            <div class="text-center">
-                <button onclick="toggleMenu()" type="button"
-                    class="inline-flex items-center justify-center p-1 px-2 py-2 text-sm rounded-lg text-white hover:bg-mm-orange focus:outline-none focus:ring focus:ring-mm-orange"
-                    aria-expanded="false"> <svg xmlns=" http://www.w3.org/2000/svg" width="0.644444in"
-                        height="0.644444in" viewBox="0 0 58 58">
-                        <path id="/dist/img/exitburger.svg" fill=" white" stroke=" white" stroke-width="0" d="M 38.90,14.86
-                        C 40.07,13.69 41.97,13.69 43.14,14.86
-                            43.14,14.86 43.14,14.86 43.14,14.86
-                            44.31,16.03 44.31,17.93 43.14,19.10
-                            43.14,19.10 19.10,43.15 19.10,43.15
-                            17.93,44.32 16.03,44.32 14.86,43.15
-                            14.86,43.15 14.86,43.15 14.86,43.15
-                            13.69,41.97 13.69,40.08 14.86,38.90
-                            14.86,38.90 38.90,14.86 38.90,14.86 Z
-                        M 43.14,38.90
-                        C 44.31,40.08 44.31,41.97 43.14,43.15
-                            43.14,43.15 43.14,43.15 43.14,43.15
-                            41.97,44.32 40.07,44.32 38.90,43.15
-                            38.90,43.15 14.86,19.10 14.86,19.10
-                            13.69,17.93 13.69,16.03 14.86,14.86
-                            14.86,14.86 14.86,14.86 14.86,14.86
-                            16.03,13.69 17.93,13.69 19.10,14.86
-                            19.10,14.86 43.14,38.90 43.14,38.90 Z" />
-                    </svg>
-                </button>
-                <ul>
-                    <li>
-                        <a href="index.html" class="block py-8 text-sm lg:text-base text-white"
-                            aria-current="page">START</a>
-                    </li>
-                    <li>
-                        <a href="radio.html" class="block py-8 text-white">PROGRAM</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block py-8 text-white">MORE VIDEOS</a>
-                    </li>
-                    <li>
-                        <a href="chat.html" class="block py-8 text-white">CHAT</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+
+        <ul
+            class="text-center mr-8 md:flex md:items-center z-[-1] bg-black md:static absolute text-white w-[100%] h-[25vh] md:h-[50px] left-0 md:w-auto md:py-0  md:pl-0  md:opacity-100 opacity-0 top-[-400px] ">
+            <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
+                <a href="#" class="text-2xl  hover:text-orange-500  ">PROGRAM</a>
+            </li>
+            <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
+                <a href="#" class="text-2xl hover:text-orange-500  ">INFO</a>
+            </li>
+            <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in ">
+                <a href="./contact.html" class="text-2xl  hover:text-orange-500  ">CONTACT</a>
+            </li>
+        </ul>
+
     </nav>
 
-    <div class="flex items-center  justify-center px-12 lg:p-12">
-        <video data-dashjs-player controls>
-            <source src="my_video_manifest.mpd" type="application/dash+xml">
-            <!-- Fallback, enable after making sure that mpd file works, <source src="example-vid.mp4"> -->
-            Your browser does not support the video tag.
-        </video>
-    </div>
-    </div>
 
+    <section>
+        <div class="flex items-center justify-center px-12 lg:p-12">
+            <video id="my-video" class="video-js" width="1000px" height="auto" autoplay muted data-setup="{}">
+                <source src="./video/M09-1317.mp4" type="video/mp4" />
+                <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider upgrading to a
+                    web browser that
+                    <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+
+                </p>
+                <link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet">
+
+            </video>
+        </div>
+        <div class=" flex items-center justify-center p-1 px-12 md:p-12 lg:p-12">
+            <form id="chat-message-input" action="">
+                <div class="p-2 flex flex-wrap justify-center">
+                    <input id="message" type="text" placeholder="What's on your mind?"
+                        class="text-white text-xs md:text-lg lg:text-lg text-center justify-start bg-black rounded-full border-4 border-orange-500 p-3 h-auto">
+
+            </form>
+        </div>
+    </section>
+
+
+
+
+
+    <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
     <script>
-        let navbarHamburger = document.getElementById('navbar-hamburger');
-        let backButton = document.querySelector('#navbar-hamburger button');
+        let myPlayer = document.querySelector(".video-js");
         let isMenuOpen = false; // Track the menu state
 
+        myPlayer.classList.add("vjs-omateema");
 
-        function toggleMenu() {
-            if (!isMenuOpen) {
-                navbarHamburger.classList.add('translate-x-0'); // Add the class to show the menu
-            } else {
-                navbarHamburger.classList.remove('translate-x-0'); // Remove the class to hide the menu
+        videojs(myPlayer, {
+            autoplay: true,
+            loop: true,
+            controls: true,
+            muted: true,
+            preload: true,
+            responsive: true,
+            userActions: {
+                doubleClick: true
             }
-            isMenuOpen = !isMenuOpen; // Toggle the menu state
-        }
-
-        function goBack() {
-            navbarHamburger.classList.remove('translate-x-0'); // Remove the class to hide the menu
-            isMenuOpen = false; // Update the menu state
-        }
+        });
     </script>
 
 </body>
