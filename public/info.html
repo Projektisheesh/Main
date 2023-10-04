@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/output.css" rel="stylesheet">
+    <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/menu.js"></script>
+
+
+</head>
+
+<body class="bg-black">
+
+
+    <nav class="p-5 shadow md:flex w-[100%] md:items-center  md:justify-between z-30 sticky ">
+
+        <div class="flex justify-between items-center ">
+            <span class=" cursor-pointer text-white font-sans">
+                <a href="#">
+                    <img class="h-10 xs:h-12 sm:h-14 lg:h-16 xl:h-20  inline transform hover:scale-125 ease-out duration-1000"
+                        src="./img/header.png" alt="Logo">
+                </a>
+            </span>
+
+            <span class=" text-3xl cursor-pointer mx-2 md:hidden block text-white">
+                <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+            </span>
+        </div>
+
+        <ul
+            class=" md:mr-8 md:flex md:items-center font-roboto-mono z-[-1] bg-black  md:static absolute dark:text-white  w-[100%]
+            h-[100vh] md:h-[50px] left-0
+                        md:w-auto md:py-4 md:pl-7 md:opacity-100 flex items-center flex-col md:flex-row  opacity-0 top-[-400px]">
+            <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
+                <a href="./program.html" class="text-2xl font-roboto-mono hover:text-mm-orange text-white  ">PROGRAM</a>
+            </li>
+            <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
+                <a href="./info.html" class="text-2xl font-roboto-mono hover:text-mm-orange   text-white">INFO</a>
+            </li>
+            <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
+                <a href="./contact.html" class="text-2xl font-roboto-mono hover:text-mm-orange   text-white">CONTACT</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="relative w-full h-[400px] overflow-hidden">
+
+        <!-- Video element that plays in the background -->
+        <video class="absolute top-0 left-0 w-full h-full object-cover brightness-[35%]" autoplay loop muted>
+            <source src="./video/uuno.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Text overlay centered on the video -->
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center text-white">
+                <h1 class="text-4xl tracking-tight font-extrabold text-orange-600 font-roboto-mono">INFO</h1>
+                <p class="text-xl mx-14 mt-3 font-roboto-mono">Metropolia Ciné 2023: A Cinematic Celebration! Join us on
+                    11th October as
+                    we
+                    stream three captivating films and an
+                    exclusive live coding demonstration. A festival where cinema and code intertwine. </p>
+            </div>
+        </div>
+    </div>
+    <div class=" flex flex-col text-center justify-center h-auto">
+        <h1 class=" mt-3 mb-10 text-2xl tracking-tight font-extrabold text-orange-600 font-roboto-mono">Schedule
+            11th
+            october
+        </h1>
+
+        <div>
+            <ul class="flex flex-wrap">
+                <li class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2">
+                    <a href="#" class="hover:opacity-75 flex flex-col items-center text-center">
+                        <p class="text-white text-lg mb-1">Playing: 9:00 pm</p>
+                        <img class="h-52 w-auto" src="./movies/kulkurin-valssi.jpg" alt="kulkurin-valssi">
+                        <h3 class="text-white font-bold text-xl">Kulkurin valssi</h3>
+                    </a>
+                </li>
+                <li class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2">
+                    <a href="#" class="hover:opacity-75 flex flex-col items-center text-center">
+                        <p class="text-white text-lg mb-1">Playing: 10:30 pm</p>
+                        <img class="h-52 w-auto" src="./movies/terminator-2.jpg" alt="terminator-2">
+                        <h3 class="text-white font-bold text-xl">terminator 2</h3>
+                    </a>
+                </li>
+                <li class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2">
+                    <a href="#" class="hover:opacity-75 flex flex-col items-center text-center">
+                        <p class=" text-white mb-1">Playing: 12:30 pm</p>
+                        <img class="h-52 w-auto" src="./movies/uuno-espanjassa.jpg" alt="uuno-espanjassa">
+                        <h3 class="text-white font-bold text-xl">Uuno espanjassa</h3>
+                    </a>
+                </li>
+                <li class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2">
+                    <a href="#" class="hover:opacity-75 flex flex-col items-center text-center">
+                        <p class=" text-white mb-1">Playing: 14:00 pm</p>
+                        <img class="h-52 w-auto" src="./movies/scarface.jpg" alt="scarface">
+                        <h3 class="text-white font-bold text-xl">Scarface</h3>
+                    </a>
+                </li>
+                <li class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2">
+                    <a href="#" class="hover:opacity-75 flex flex-col items-center text-center">
+                        <p class=" text-white mb-1">Playing: 16:00 pm</p>
+                        <img class="h-52 w-auto" src="./movies/diehard.jpg" alt="diehard">
+                        <h3 class="text-white font-bold text-xl">Die Hard</h3>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+        <footer class="p-8 bg-black md:p-8 lg:my-8 font-roboto-mono">
+            <div class="mx-auto max-w-screen-xl text-center">
+                <div class="flex items-center justify-center">
+                    <img src="./img/header.png" alt="logo" class="w-16 mr-4">
+                    <a class="flex justify-center items-center text-xl font-semibold text-white">
+                        Metropolia Cine
+                    </a>
+
+                </div>
+                <p class="my-6 text-white">Address: Lentoasemantie 1, 01530 Vantaa </p>
+                <ul class="flex flex-wrap justify-center items-center mb-6 text-s text-orange-500">
+                    <li>
+                        <a href="#" class="mr-4 hover:underline md:mr-6">Info</a>
+                    </li>
+                    <li>
+                        <a href="#" class="mr-4 hover:underline md:mr-6">Frontpage</a>
+                    </li>
+                </ul>
+
+            </div>
+
+
+        </footer>
+
+
+
+
+</body>
+
+</html>
