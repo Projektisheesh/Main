@@ -38,7 +38,7 @@
             h-[100vh] md:h-[50px] left-0
                         md:w-auto md:py-4 md:pl-7 md:opacity-100 flex items-center flex-col md:flex-row  opacity-0 top-[-400px]">
             <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
-                <a href="./program.html" class="text-2xl font-roboto-mono hover:text-mm-orange text-white  ">PROGRAM</a>
+                <a href="./index.html" class="text-2xl font-roboto-mono hover:text-mm-orange text-white  ">PROGRAM</a>
             </li>
             <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
                 <a href="./info.html" class="text-2xl font-roboto-mono hover:text-mm-orange   text-white">INFO</a>
@@ -78,35 +78,35 @@
         <div>
             <ul class="flex flex-wrap">
                 <li class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2">
-                    <a href="#" class="hover:opacity-75 flex flex-col items-center text-center">
+                    <a href="#" class="hover:opacity-75 flex mb-5 flex-col items-center text-center">
                         <p class="text-white text-lg mb-1">Playing: 9:00 pm</p>
                         <img class="h-52 w-auto" src="./movies/kulkurin-valssi.jpg" alt="kulkurin-valssi">
                         <h3 class="text-white font-bold text-xl">Kulkurin valssi</h3>
                     </a>
                 </li>
                 <li class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2">
-                    <a href="#" class="hover:opacity-75 flex flex-col items-center text-center">
+                    <a href="#" class="hover:opacity-75 flex mb-5 flex-col items-center text-center">
                         <p class="text-white text-lg mb-1">Playing: 10:30 pm</p>
                         <img class="h-52 w-auto" src="./movies/terminator-2.jpg" alt="terminator-2">
                         <h3 class="text-white font-bold text-xl">terminator 2</h3>
                     </a>
                 </li>
                 <li class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2">
-                    <a href="#" class="hover:opacity-75 flex flex-col items-center text-center">
+                    <a href="#" class="hover:opacity-75 mb-5 flex flex-col items-center text-center">
                         <p class=" text-white mb-1">Playing: 12:30 pm</p>
                         <img class="h-52 w-auto" src="./movies/uuno-espanjassa.jpg" alt="uuno-espanjassa">
                         <h3 class="text-white font-bold text-xl">Uuno espanjassa</h3>
                     </a>
                 </li>
                 <li class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2">
-                    <a href="#" class="hover:opacity-75 flex flex-col items-center text-center">
+                    <a href="#" class="hover:opacity-75 mb-5 flex flex-col items-center text-center ">
                         <p class=" text-white mb-1">Playing: 14:00 pm</p>
                         <img class="h-52 w-auto" src="./movies/scarface.jpg" alt="scarface">
                         <h3 class="text-white font-bold text-xl">Scarface</h3>
                     </a>
                 </li>
                 <li class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2">
-                    <a href="#" class="hover:opacity-75 flex flex-col items-center text-center">
+                    <a href="#" class="hover:opacity-75 mb-5 flex flex-col items-center text-center">
                         <p class=" text-white mb-1">Playing: 16:00 pm</p>
                         <img class="h-52 w-auto" src="./movies/diehard.jpg" alt="diehard">
                         <h3 class="text-white font-bold text-xl">Die Hard</h3>
@@ -116,7 +116,7 @@
         </div>
 
 
-        <footer class="p-8 bg-black md:p-8 lg:my-8 font-roboto-mono">
+        <footer class="p-8 bg-black md:p-8 lg:my-8 flex flex-col md:flex-row font-roboto-mono">
             <div class="mx-auto max-w-screen-xl text-center">
                 <div class="flex items-center justify-center">
                     <img src="./img/header.png" alt="logo" class="w-16 mr-4">
@@ -134,10 +134,25 @@
                         <a href="#" class="mr-4 hover:underline md:mr-6">Frontpage</a>
                     </li>
                 </ul>
-
             </div>
 
 
+            <div class="max-w-md mx-auto mt-5 p-4  rounded-lg shadow-md">
+                <div class="text-center mb-4">
+                    <h1 class="text-xl font-bold text-white">Subscribe to our news</h1>
+                </div>
+                <form id="newsletter-form">
+                    <div class="mb-4">
+                        <input class="w-full px-4 py-2 border rounded-md" type="email" id="email" name="email"
+                            placeholder="Enter your email" required>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit"
+                            class="bg-orange-600 text-white px-4 py-2 rounded-md hover:bg-orange-500">Subscribe</button>
+                    </div>
+                </form>
+                <div id="message" class="text-center mt-4"></div>
+            </div>
         </footer>
 
 
