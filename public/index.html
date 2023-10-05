@@ -83,35 +83,35 @@
                 <!-- Item 1 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
                     <a href="video.html"> <!-- Add your link here -->
-                        <img src="../public/img/bg.jpeg"
+                        <img src="../public/img/Kulkuri.jpg"
                             class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                     </a>
                 </div>
                 <!-- Item 2 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
                     <a href="video.html"> <!-- Add your link here -->
-                        <img src="https://hips.hearstapps.com/hmg-prod/images/2001-space-1530898390.jpg"
+                        <img src="../public/img/Terminator_1.jpg"
                             class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                     </a>
                 </div>
                 <!-- Item 3 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
                     <a href="video.html"> <!-- Add your link here -->
-                        <img src="https://imageio.forbes.com/blogs-images/markhughes/files/2014/11/interstellar-1111.png?format=png&width=1200"
+                        <img src="../public/img/uuno_2.jpg"
                             class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                     </a>
                 </div>
                 <!-- Item 4 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
                     <a href="video.html"> <!-- Add your link here -->
-                        <img src="https://ychef.files.bbci.co.uk/976x549/p02bttqw.jpg"
+                        <img src="../public/img/Scarface.jpg"
                             class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                     </a>
                 </div>
                 <!-- Item 5 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
                     <a href="video.html"> <!-- Add your link here -->
-                        <img src="https://helios-i.mashable.com/imagery/articles/034fCHf83Mej1reZuPxTJoW/images-171.fill.size_2000x1124.v1626258722.png"
+                        <img src="../public/img/diehard.jpg"
                             class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                     </a>
                 </div>
@@ -160,6 +160,19 @@
     </div>
 
 
+    <div class="text-center mt-20 ">
+        <div id="countdown" class="text-3xl font-semibold text-orange-500">
+            <span id="days" class="px-2">00</span>
+            <span>:</span>
+            <span id="hours" class="px-2">00</span>
+            <span>:</span>
+            <span id="minutes" class="px-2">00</span>
+            <span>:</span>
+            <span id="seconds" class="px-2">00</span>
+        </div>
+        <h1 class="text-2xl font-semibold mb-4 text-white mt-3">Stream Countdown</h1>
+    </div>
+
 
     <div class="min-h-screen flex items-center">
         <div class="w-full h-screen ">
@@ -178,6 +191,34 @@
                 <p class="text-xl text-white font-roboto-mono">Description Below Video 1</p>
             </div>
 
+            <script>
+                // Set the target date and time for the countdown (YYYY-MM-DD HH:MM:SS)
+                const targetDate = new Date("2023-10-11 14:00:00").getTime();
+            
+                // Update the countdown every second
+                const countdown = setInterval(function() {
+                    const currentDate = new Date().getTime();
+                    const timeLeft = targetDate - currentDate;
+            
+                    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+                    // Display the countdown
+                    document.getElementById("days").innerText = days.toString().padStart(2, "0");
+                    document.getElementById("hours").innerText = hours.toString().padStart(2, "0");
+                    document.getElementById("minutes").innerText = minutes.toString().padStart(2, "0");
+                    document.getElementById("seconds").innerText = seconds.toString().padStart(2, "0");
+            
+                    // If the countdown is over, display a message
+                    if (timeLeft < 0) {
+                        clearInterval(countdown);
+                        document.getElementById("countdown").innerText = "Countdown Expired";
+                    }
+                }, 1000);
+            </script>
+            
 
 
 
@@ -228,6 +269,8 @@
                 // Add a resize event listener to toggle buttons on window resize
                 window.addEventListener('resize', toggleButtonsVisibility);
             </script>
+
+
 
 
 
