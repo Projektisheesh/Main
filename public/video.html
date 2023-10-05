@@ -10,7 +10,6 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="/socket.io/socket.io.js"></script>
-
     <script src="./js/menu.js"></script>
     <script defer src="chat.js"></script>
 
@@ -18,9 +17,11 @@
 
 </head>
 
-<body class="bg-black flex flex-col h-full">
-    <nav class="p-5 shadow md:flex w-[100%] md:items-center md:justify-between z-20 sticky ">
+<body class="bg-black">
 
+
+
+    <nav class="p-5 shadow md:flex w-full md:items-center md:justify-between z-50 sticky top-0 bg-black">
         <div class="flex justify-between items-center ">
             <span class=" cursor-pointer text-white">
                 <a href="./index.html">
@@ -37,7 +38,7 @@
         <ul
             class="text-center mr-8 md:flex md:items-center z-[-1] bg-black md:static absolute text-white w-[100%] h-[25vh] md:h-[50px] left-0 md:w-auto md:py-0  md:pl-0  md:opacity-100 opacity-0 top-[-400px] ">
             <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
-                <a href="#" class="text-2xl  hover:text-orange-500  ">PROGRAM</a>
+                <a href="./index.html" class="text-2xl  hover:text-orange-500  ">PROGRAM</a>
             </li>
             <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
                 <a href="info.html" class="text-2xl hover:text-orange-500  ">INFO</a>
@@ -50,8 +51,8 @@
     </nav>
 
 
-    <section class="flex flex-col items-center justify-center flex-1">
-        <div class="flex-col items-center justify-center px-12 lg:p-12 mb-10">
+    <section class="flex flex-col items-center mt-52 md:mt-0 justify-center h-full ">
+        <div class="flex-col items-center justify-center md:h-[70%] md:w-[70%] px-12 md:p-12">
             <video class=" object-cover border-4 border-orange-500 rounded-lg" autoplay controls loop muted>
                 <source src="./video/M09-1317.mp4" type="video/mp4" />
                 <p class="vjs-no-js">
@@ -63,19 +64,18 @@
                 <link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet">
 
             </video>
-            <div class="p-2 text-white flex-grow">
-                <ul class=" text-white justify-start bg-black mb-4 ring-4 ring-mm-orange p-2 rounded-lg
+            <div class="p-2 text-white ">
+                <ul class=" text-white justify-start  bg-black text-xs md:text-lg break-words ring-4 ring-mm-orange  rounded-lg
             w-auto h-auto" id="messages">
                 </ul>
             </div>
             <br>
             <form id="chat-message-input" action="">
-                <div class="pt-12 flex flex-wrap justify-center">
+                <div class=" flex flex-wrap justify-center">
                     <input id="message" type="text" placeholder="What's on your mind?"
-                        class="text-white text-xs md:text-lg lg:text-lg text-center justify-start bg-black rounded-full border-4 border-orange-500 p-3 h-auto">
+                        class="text-white text-xs md:text-lg  text-center justify-start bg-black rounded-full border-4 border-orange-500 p-3 h-auto">
 
             </form>
-        </div>
         </div>
     </section>
 
