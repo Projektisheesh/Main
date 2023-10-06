@@ -14,8 +14,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./js/menu.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
-
-
+ 
 
 
 </head>
@@ -30,6 +29,21 @@
             z-index: 9999;
             /* Ensure the button appears on top of other content */
         }
+        .vjs-omateema{
+            color: #00ff00;
+}
+
+/* Change the border of the big play button. */
+.vjs-omateema .vjs-big-play-button {
+  border-color: #00ff00;
+}
+
+/* Change the color of various "bars". */
+.vjs-omateema .vjs-volume-level,
+.vjs-omateema .vjs-play-progress,
+.vjs-omateema .vjs-slider-bar {
+  background: #00ff00;
+}
     }
 </style>
 
@@ -167,7 +181,8 @@
 
 
         <div class="flex-col flex items-center mt-36 justify-center md:h-[70%] md:w-[70%] px-12 md:p-12">
-            <video class=" object-cover border-4 border-orange-500 rounded-lg" autoplay controls loop muted>
+            <video 
+             class=" border-4 border-orange-500 rounded-lg"  controls loop muted>
                 <source src="./video/M09-1317.mp4" type="video/mp4" />
                 <p class="vjs-no-js">
                     To view this video please enable JavaScript, and consider upgrading to a
