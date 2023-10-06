@@ -12,6 +12,7 @@
     <script src="/socket.io/socket.io.js"></script>
     <script src="./js/menu.js"></script>
     <script defer src="chat.js"></script>
+    <script defer src="./js/nowPlaying.js"> </script>
 
 
 
@@ -38,7 +39,8 @@
         <ul
             class="text-center mr-8 md:flex md:items-center z-[-1] bg-black md:static absolute text-white w-[100%] h-[25vh] md:h-[50px] left-0 md:w-auto md:py-0  md:pl-0  md:opacity-100 opacity-0 top-[-400px] ">
             <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
-                <a href="./index.html" class="text-2xl  hover:text-orange-500  ">PROGRAM</a>
+                <a href="./index.html" class="text-2xl  hover:text-orange-500  ">MOVIE
+                    STREAM</a>
             </li>
             <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
                 <a href="info.html" class="text-2xl hover:text-orange-500  ">INFO</a>
@@ -50,20 +52,21 @@
 
     </nav>
 
+    <div id="display" class="text-2xl text-white flex justify-center text-orange-600"></div>
 
-    <section class="flex flex-col items-center mt-52 md:mt-0 justify-center h-full ">
-        <div class="flex-col items-center justify-center md:h-[70%] md:w-[70%] px-12 md:p-12">
-            <video class=" object-cover border-4 border-orange-500 rounded-lg" autoplay controls loop muted>
-                <source src="./video/M09-1317.mp4" type="video/mp4" />
+    <section class="flex items-center mt-52 md:mt-0 justify-center h-full ">
+        <div class="flex-col items-center justify-center md:flex  md:h-[70%] px-12 md:p-5">
+            <video class=" lg:w-[60%] xl:w-[50%]  border-4 border-orange-500 rounded-lg" preload="auto"
+                poster="./img/diehard.jpg" autoplay controls muted>
+                <source src="http://195.148.104.124:1935/jakelu/lefaIlta/playlist.m3u8" type="application/x-mpegURL" />
                 <p class="vjs-no-js">
-                    To view this video please enable JavaScript, and consider upgrading to a
-                    web browser that
+                    To view this video please enable JavaScript, and consider upgrading to a web browser that
                     <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-
                 </p>
                 <link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet">
 
             </video>
+
             <div class="p-2 text-white ">
                 <ul class=" text-white justify-start  bg-black text-xs md:text-lg break-words ring-4 ring-mm-orange  rounded-lg
             w-auto h-auto" id="messages">
@@ -92,7 +95,6 @@
 
         videojs(myPlayer, {
             autoplay: true,
-            loop: true,
             controls: true,
             muted: true,
             preload: true,
