@@ -54,7 +54,8 @@
         <ul
             class="text-center mr-8 md:flex md:items-center z-[-1] bg-black md:static absolute text-white w-[100%] h-[25vh] md:h-[50px] left-0 md:w-auto md:py-0  md:pl-0  md:opacity-100 opacity-0 top-[-400px] ">
             <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
-                <a href="./index.html" class="text-2xl  hover:text-orange-500  ">PROGRAM</a>
+                <a href="./player.html" class="text-2xl  hover:text-orange-500  ">MOVIE
+                    STREAM</a>
             </li>
             <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
                 <a href="info.html" class="text-2xl hover:text-orange-500  ">INFO</a>
@@ -63,7 +64,6 @@
                 <a href="./contact.html" class="text-2xl  hover:text-orange-500  ">CONTACT</a>
             </li>
         </ul>
-
     </nav>
 
 
@@ -259,63 +259,63 @@
                 </span>
             </button>
         </div>
-    </div>
-
-
-    <div class="text-center mt-20 ">
-        <div id="countdown" class="text-3xl font-semibold text-orange-500">
-            <span id="days" class="px-2">00</span>
-            <span>:</span>
-            <span id="hours" class="px-2">00</span>
-            <span>:</span>
-            <span id="minutes" class="px-2">00</span>
-            <span>:</span>
-            <span id="seconds" class="px-2">00</span>
         </div>
-        <h1 class="text-2xl font-semibold mb-4 text-white mt-3">Stream Countdown</h1>
-    </div>
 
 
-    <div class="min-h-screen flex items-center">
-        <div class="w-full h-screen ">
-            <div class="snap-start flex flex-col items-center justify-center px-12 lg:p-12 mt-20 ">
-                <video id="my-video1"
-                    class="video-js border-4 border-orange-500 rounded-xl my-8 w-full md:w-3/4 lg:w-2/3 max-h-[480px] md:max-h-[360px] lg:max-h-[480px]"
-                    width="640px" height="357px" autoplay muted data-setup="{}">
-                    <source src="./video/M09-1317.mp4" type="video/mp4" />
-                    <p class="vjs-no-js">
-                        To view this video please enable JavaScript, and consider upgrading to a
-                        web browser that
-                        <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-                    </p>
-                    <link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet">
-                </video>
-                <p class="text-xl text-white font-roboto-mono">Description Below Video 1</p>
+        <div class="text-center mt-20 ">
+            <div id="countdown" class="text-3xl font-semibold text-orange-500">
+                <span id="days" class="px-2">00</span>
+                <span>:</span>
+                <span id="hours" class="px-2">00</span>
+                <span>:</span>
+                <span id="minutes" class="px-2">00</span>
+                <span>:</span>
+                <span id="seconds" class="px-2">00</span>
             </div>
-
+            <h1 class="text-2xl font-semibold mb-4 text-white mt-3">Stream Countdown</h1>
         </div>
+
+
+        <div class="min-h-screen flex items-center">
+            <div class="w-full h-screen ">
+                <div class="snap-start flex flex-col items-center justify-center px-12 lg:p-12 mt-20 ">
+                    <video id="my-video1"
+                        class="video-js border-4 border-orange-500 rounded-xl my-8 w-full md:w-3/4 lg:w-2/3 max-h-[480px] md:max-h-[360px] lg:max-h-[480px]"
+                        width="640px" height="357px" autoplay muted data-setup="{}">
+                        <source src="./video/M09-1317.mp4" type="video/mp4" />
+                        <p class="vjs-no-js">
+                            To view this video please enable JavaScript, and consider upgrading to a
+                            web browser that
+                            <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                        </p>
+                        <link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet">
+                    </video>
+                    <p class="text-xl text-white font-roboto-mono">Description Below Video 1</p>
+                </div>
+
+            </div>
 
 
             <script>
                 // Set the target date and time for the countdown (YYYY-MM-DD HH:MM:SS)
                 const targetDate = new Date("2023-10-11 14:00:00").getTime();
-            
+
                 // Update the countdown every second
-                const countdown = setInterval(function() {
+                const countdown = setInterval(function () {
                     const currentDate = new Date().getTime();
                     const timeLeft = targetDate - currentDate;
-            
+
                     const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
                     const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                     const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
                     const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-            
+
                     // Display the countdown
                     document.getElementById("days").innerText = days.toString().padStart(2, "0");
                     document.getElementById("hours").innerText = hours.toString().padStart(2, "0");
                     document.getElementById("minutes").innerText = minutes.toString().padStart(2, "0");
                     document.getElementById("seconds").innerText = seconds.toString().padStart(2, "0");
-            
+
                     // If the countdown is over, display a message
                     if (timeLeft < 0) {
                         clearInterval(countdown);
@@ -323,7 +323,7 @@
                     }
                 }, 1000);
             </script>
-            
+
 
 
     </section>
