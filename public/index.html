@@ -195,8 +195,15 @@
                 </div>
 
             </div>
-            <video class=" border-4 border-orange-500 rounded-lg" controls loop muted>
-                <source src="./video/M09-1317.mp4" type="video/mp4" />
+            <video  id="my-video"
+            class="video-js"
+            controls
+            preload="auto"
+            width="640"
+            height="264"
+            data-setup="{}"
+          >
+                <source src="http://195.148.104.124:1935/jakelu/jakfilms/playlist.m3u8" type="video/mp4" />
                 <p class="vjs-no-js">
                     To view this video please enable JavaScript, and consider upgrading to a
                     web browser that
@@ -234,7 +241,7 @@
 
 
         </footer>
-
+    </section>
 
 
 
@@ -271,7 +278,7 @@
 
 
 
-    </section>
+    
 
 
 
@@ -283,8 +290,8 @@
         myPlayer.classList.add("vjs-omateema");
 
         videojs(myPlayer, {
-            autoplay: true,
-            loop: true,
+         
+           
             controls: true,
             muted: true,
             preload: true,
