@@ -1,0 +1,40 @@
+
+
+.video-js .vjs-big-play-button {
+    color: black;
+    background-color: black !important;
+    border-color: #FF5C00 !important;
+    
+    
+ 
+}
+.video-js .vjs-live-control {
+    background-color: black;
+}
+.video-js .vjs-play-control {
+background-color: black;
+}
+
+.video-js .vjs-mute-control {
+    background-color: black;
+}
+.video-js .vjs-volume-panel.vjs-hover .vjs-volume-control.vjs-volume-horizontal, .video-js .vjs-volume-panel:active .vjs-volume-control.vjs-volume-horizontal, .video-js .vjs-volume-panel:focus .vjs-volume-control.vjs-volume-horizontal, .video-js .vjs-volume-panel .vjs-volume-control:active.vjs-volume-horizontal, .video-js .vjs-volume-panel.vjs-hover .vjs-mute-control ~ .vjs-volume-control.vjs-volume-horizontal, .video-js .vjs-volume-panel .vjs-volume-control.vjs-slider-active.vjs-volume-horizontal{
+    background-color: black;
+}
+.video-js .vjs-volume-panel{
+    background-color: black;
+}
+.video-js .vjs-picture-in-picture-control {
+    background-color: black;
+}
+.video-js .vjs-fullscreen-control{
+    background-color: black;
+}
+.video-js *, .video-js *:before, .video-js *:after {
+    color: #FF5C00;
+}
+
+.video-js.vjs-layout-x-small .vjs-custom-control-spacer {
+    background-color: black;
+}
+
