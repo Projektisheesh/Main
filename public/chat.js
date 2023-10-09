@@ -1,64 +1,65 @@
 const socket = io("https://hakkerikone-server.northeurope.cloudapp.azure.com/");
-
-// Destructure DOM elements for ease of use
-const {
-  join: joinForm,
-  roomDiv,
-  "msg-input": writeMsg,
-  leaveBtn,
-  roomNumber,
-  messages,
-  username,
-  message: inp,
-  sendMsg,
-} = document;
-
-const toggleDisplays = (showJoin) => {
-  joinForm.style.display = showJoin ? "block" : "none";
-  roomDiv.style.display = showJoin ? "none" : "block";
-  writeMsg.style.display = showJoin ? "none" : "block";
-  leaveBtn.style.display = showJoin ? "none" : "block";
-  roomNumber.style.display = showJoin ? "none" : "block";
-};
+const joinForm = document.querySelector("#join");
+const roomDiv = document.querySelector("#roomDiv");
+const writeMsg = document.querySelector("#msg-input");
+const leaveBtn = document.querySelector("#leaveBtn");
+const roomNumber = document.querySelector("#roomNumber");
+const messages = document.getElementById("messages");
 
 joinForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-
+  const username = document.getElementById("username");
   const room = document.querySelector('input[name="room"]:checked').value;
   socket.emit("join", username.value, room);
-
   username.value = "";
-  toggleDisplays(false);
-  roomNumber.innerHTML = `You are chatting about ${room}`;
+  joinForm.style.display = "none";
+  roomDiv.style.display = "block";
+  writeMsg.style.display = "block";
+  leaveBtn.style.display = "block";
+  roomNumber.style.display = "block";
+  roomNumber.innerHTML = "You are chatting about " + room;
+  event.preventDefault();
 });
 
 leaveBtn.addEventListener("click", (event) => {
   event.preventDefault();
   socket.emit("leave");
-  toggleDisplays(true);
+  joinForm.style.display = "block";
+  roomDiv.style.display = "none";
+  writeMsg.style.display = "none";
+  leaveBtn.style.display = "none";
+  roomNumber.style.display = "none";
   messages.innerHTML = "";
 });
 
 writeMsg.addEventListener("submit", (event) => {
   event.preventDefault();
+  const inp = document.getElementById("message");
   console.log("emitting", inp.value);
   socket.emit("write message", inp.value);
   inp.value = "";
 });
 
-socket.on("new message", (msg, user) => {
+socket.on("new message", (msg, username) => {
   const item = document.createElement("li");
-  item.innerHTML = `${user}: </b>${msg}`;
-  messages.appendChild(item);
+  item.innerHTML = `${username}: </b>` + msg;
+  document.getElementById("messages").appendChild(item);
+  showMessagesList();
 });
 
-socket.on("response", console.log);
-socket.on("leaveResponse", console.log);
+socket.on("response", (msg) => {
+  console.log(msg);
+});
+
+socket.on("leaveResponse", (msg) => {
+  console.log(msg);
+});
 
 // Send chat message also by pressing enter
-writeMsg.addEventListener("keypress", (event) => {
+writeMsg.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
+    // Cancel the default action, if needed
     event.preventDefault();
-    sendMsg.click();
+    // Trigger the button element with a click
+    document.getElementById("sendMsg").click();
   }
 });
