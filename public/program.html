@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../dist/output.css" rel="stylesheet">
+
+    <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/menu.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+
+
+
+</head>
+<style>
+    @media (max-width: 640px) {
+
+        /* Adjust the button's position for mobile screens */
+        #scroll-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            /* Ensure the button appears on top of other content */
+        }
+
+        .vjs-omateema {
+            color: #00ff00;
+        }
+
+        /* Change the border of the big play button. */
+        .vjs-omateema .vjs-big-play-button {
+            border-color: #00ff00;
+        }
+
+        /* Change the color of various "bars". */
+        .vjs-omateema .vjs-volume-level,
+        .vjs-omateema .vjs-play-progress,
+        .vjs-omateema .vjs-slider-bar {
+            background: #00ff00;
+        }
+    }
+</style>
+
+<body class="bg-black">
+
+
+
+    <nav class="p-5 shadow md:flex w-full md:items-center md:justify-between z-50 sticky top-0 bg-black">
+        <div class="flex justify-between items-center ">
+            <span class=" cursor-pointer text-white">
+                <a href="./index.html">
+                    <img class="h-10 xs:h-12 sm:h-14 lg:h-16 xl:h-20  inline transform hover:scale-105 ease-out duration-1000"
+                        src="./img/header.png" alt="Logo">
+                </a>
+            </span>
+
+            <span class="text-3xl cursor-pointer mx-2 md:hidden block text-white ">
+                <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+            </span>
+        </div>
+
+        <ul
+            class="text-center mr-8 md:flex md:items-center z-[-1] bg-black md:static absolute text-white w-[100%] h-[25vh] md:h-[50px] left-0 md:w-auto md:py-0  md:pl-0  md:opacity-100 opacity-0 top-[-400px] ">
+            <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
+                <a href="./index.html" class="text-2xl  hover:text-orange-500  ">HOME
+                    </a>
+            </li>
+            <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in ">
+                <a href="./program.html" class="text-2xl  hover:text-orange-500  ">PROGRAM</a>
+            </li>
+            <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
+                <a href="info.html" class="text-2xl hover:text-orange-500  ">INFO</a>
+            </li>
+            <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in ">
+                <a href="./contact.html" class="text-2xl  hover:text-orange-500  ">CONTACT</a>
+            </li>
+            
+        </ul>
+    </nav>
+
+
+    <section class="flex flex-col items-center justify-center h-full ">
+        <button id="scroll-button"
+            class="fixed bottom-4 object-cover right-4 bg-orange-500 text-white rounded-full p-2 cursor-pointer">
+            <ion-icon name="arrow-down-circle-outline"></ion-icon>
+        </button>
+
+
+        <div class="w-4/5 mx-auto">
+            <h1 class="text-3xl mt-20 text-white font-semibold mb-4 text-center font-roboto-mono">NEXT UP...</h1>
+            <div id="default-carousel" class="relative w-full mt-10 border-4 border-orange-500 rounded-lg"
+                data-carousel="slide">
+
+                <!-- Carousel wrapper -->
+                <div class="relative h-36 overflow-hidden rounded-lg md:h-96 ">
+                    <!-- Item 1 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <a href="player.html"> <!-- Add your link here -->
+                            <img src="../public/img/Kulkuri.jpg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="...">
+                        </a>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <a href="player.html"> <!-- Add your link here -->
+                            <img src="../public/img/Terminator_1.jpg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="...">
+                        </a>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <a href="player.html"> <!-- Add your link here -->
+                            <img src="../public/img/uuno_2.jpg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="...">
+                        </a>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <a href="player.html"> <!-- Add your link here -->
+                            <img src="../public/img/Scarface.jpg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="...">
+                        </a>
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <a href="player.html"> <!-- Add your link here -->
+                            <img src="../public/img/diehard.jpg"
+                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="...">
+                        </a>
+                    </div>
+                </div>
+                <!-- Slider indicators -->
+                <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+                        data-carousel-slide-to="0"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+                        data-carousel-slide-to="1"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+                        data-carousel-slide-to="2"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
+                        data-carousel-slide-to="3"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
+                        data-carousel-slide-to="4"></button>
+                </div>
+                <!-- Slider controls -->
+                <button type="button"
+                    class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                    data-carousel-prev>
+                    <span
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white\/30 dark:bg-orange-500 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-gg- dark:text-gray-800" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 1 1 5l4 4" />
+                        </svg>
+                        <span class="sr-only">Previous</span>
+                    </span>
+                </button>
+                <button type="button"
+                    class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                    data-carousel-next>
+                    <span
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-orange-500 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 9 4-4-4-4" />
+                        </svg>
+                        <span class="sr-only">Next</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+
+   
+
+
+
+
+        </div>
+        <footer class="p-4 bg-black md:p-8 lg:mt-2 font-roboto-mono pt-20">
+            <div class="mx-auto max-w-screen-xl text-center">
+                <div class="flex items-center justify-center">
+                    <img src="./img/header.png" alt="logo" class="w-16 mr-4">
+                    <a class="flex justify-center items-center text-xl font-semibold text-white">
+                        Metropolia Cine
+                    </a>
+
+                </div>
+                <p class="my-4 text-white">Address: Lentoasemantie 1, 01530 Vantaa </p>
+                <ul class="flex flex-wrap justify-center items-center mb-6 text-s text-orange-500">
+                    <li>
+                        <a href="#" class="ml-2 hover:underline ">Info</a>
+                    </li>
+                    <li>
+                        <a href="./index.html" class="ml-6 hover:underline md:ml-6">Frontpage</a>
+                    </li>
+                </ul>
+
+
+
+
+
+        </footer>
+
+
+
+
+
+
+
+        <script>
+            // Set the target date and time for the countdown (YYYY-MM-DD HH:MM:SS)
+            const targetDate = new Date("2023-10-11 14:00:00").getTime();
+
+            // Update the countdown every second
+            const countdown = setInterval(function () {
+                const currentDate = new Date().getTime();
+                const timeLeft = targetDate - currentDate;
+
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                // Display the countdown
+                document.getElementById("days").innerText = days.toString().padStart(2, "0");
+                document.getElementById("hours").innerText = hours.toString().padStart(2, "0");
+                document.getElementById("minutes").innerText = minutes.toString().padStart(2, "0");
+                document.getElementById("seconds").innerText = seconds.toString().padStart(2, "0");
+
+                // If the countdown is over, display a message
+                if (timeLeft < 0) {
+                    clearInterval(countdown);
+                    document.getElementById("countdown").innerText = "Countdown Expired";
+                }
+            }, 1000);
+        </script>
+
+
+
+    </section>
+
+
+
+    <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
+    <script>
+        let myPlayer = document.querySelector(".video-js");
+        let isMenuOpen = false; // Track the menu state
+
+        myPlayer.classList.add("vjs-omateema");
+
+        videojs(myPlayer, {
+            autoplay: true,
+            loop: true,
+            controls: true,
+            muted: true,
+            preload: true,
+            responsive: true,
+            userActions: {
+                doubleClick: true
+            }
+        });
+
+
+
+
+    </script>
+
+    <script>
+        function toggleButtonsVisibility() {
+            const isMobileView = window.innerWidth <= 640; // Adjust the width as needed
+            const prevButton = document.querySelector('[data-carousel-prev]');
+            const nextButton = document.querySelector('[data-carousel-next]');
+
+            if (isMobileView) {
+                prevButton.style.display = 'none'; // Hide the previous button
+                nextButton.style.display = 'none'; // Hide the next button
+            } else {
+                prevButton.style.display = 'block'; // Show the previous button
+                nextButton.style.display = 'block'; // Show the next button
+            }
+        }
+
+        // Initially toggle button visibility on page load
+        toggleButtonsVisibility();
+
+        // Add a resize event listener to toggle buttons on window resize
+        window.addEventListener('resize', toggleButtonsVisibility);
+    </script>
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+
+
+</body>
+
+</html>
