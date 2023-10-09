@@ -1,4 +1,4 @@
-const socket = io("https://hakkerikone-server.northeurope.cloudapp.azure.com/");
+const socket = io("https://mdds-server-jj.northeurope.cloudapp.azure.com/");
 const joinForm = document.querySelector("#join");
 const roomDiv = document.querySelector("#roomDiv");
 const writeMsg = document.querySelector("#msg-input");
