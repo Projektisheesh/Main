@@ -1,205 +1,135 @@
 <!DOCTYPE html>
 <html class="h-full">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/dist/output.css" rel="stylesheet" />
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="./js/menu.js"></script>
-    <script defer src="chat.js"></script>
-    <script defer src="./js/nowPlaying.js"></script>
-  </head>
 
-  <body class="bg-black">
-    <nav
-      class="p-5 shadow md:flex w-full md:items-center md:justify-between z-50 sticky top-0 bg-black"
-    >
-      <div class="flex justify-between items-center">
-        <span class="cursor-pointer text-white">
-          <a href="./index.html">
-            <img
-              class="h-10 xs:h-12 sm:h-14 lg:h-16 xl:h-20 inline transform hover:scale-105 ease-out duration-1000"
-              src="./img/header.png"
-              alt="Logo"
-            />
-          </a>
-        </span>
-        <span class="text-3xl cursor-pointer mx-2 md:hidden block text-white">
-          <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
-        </span>
-      </div>
-      <ul
-        class="text-center mr-8 md:flex md:items-center z-[-1] bg-black md:static absolute text-white w-[100%] h-[25vh] md:h-[50px] left-0 md:w-auto md:py-0 md:pl-0 md:opacity-100 opacity-0 top-[-400px]"
-      >
-        <li
-          class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in"
-        >
-          <a href="./index.html" class="text-2xl hover:text-orange-500"
-            >HOME
-          </a>
-        </li>
-        <li
-          class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in"
-        >
-          <a href="./program.html" class="text-2xl hover:text-orange-500"
-            >PROGRAM</a
-          >
-        </li>
-        <li
-          class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in"
-        >
-          <a href="info.html" class="text-2xl hover:text-orange-500">INFO</a>
-        </li>
-        <li
-          class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in"
-        >
-          <a href="./contact.html" class="text-2xl hover:text-orange-500"
-            >CONTACT</a
-          >
-        </li>
-      </ul>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/dist/output.css" rel="stylesheet" />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="./js/menu.js"></script>
+  <script defer src="chat.js"></script>
+  <script defer src="./js/nowPlaying.js"></script>
+</head>
 
-    <div id="display" class="text-2xl text-white flex justify-center"></div>
-    <section
-      class="flex items-center mt-52 md:mt-0 justify-center h-full px-2 md:px-12"
-    >
-      <div
-        class="flex-col items-center justify-center md:flex w-full md:h-[70%]"
-      >
-        <video
-          class="lg:w-[60%] xl:w-[50%] border-4 border-orange-500 rounded-lg"
-          preload="auto"
-          poster="./img/diehard.jpg"
-          autoplay
-          controls
-          muted
-        >
-          <source
-            src="http://195.148.104.124:1935/jakelu/lefaIlta/playlist.m3u8"
-            type="application/x-mpegURL"
-          />
-          <p class="vjs-no-js">
-            To view this video please enable JavaScript, and consider upgrading
-            to a web browser that
-            <a href="https://videojs.com/html5-video-support/" target="_blank"
-              >supports HTML5 video</a
-            >
-          </p>
-          <link
-            href="https://unpkg.com/video.js@7/dist/video-js.min.css"
-            rel="stylesheet"
-          />
-        </video>
+<body class="bg-black">
+  <nav class="p-5 shadow md:flex w-full md:items-center md:justify-between z-50 sticky top-0 bg-black">
+    <div class="flex justify-between items-center">
+      <span class="cursor-pointer text-white">
+        <a href="./index.html">
+          <img class="h-10 xs:h-12 sm:h-14 lg:h-16 xl:h-20 inline transform hover:scale-105 ease-out duration-1000"
+            src="./img/header.png" alt="Logo" />
+        </a>
+      </span>
+      <span class="text-3xl cursor-pointer mx-2 md:hidden block text-white">
+        <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+      </span>
+    </div>
+    <ul
+      class="text-center mr-8 md:flex md:items-center z-[-1] bg-black md:static absolute text-white w-[100%] h-[25vh] md:h-[50px] left-0 md:w-auto md:py-0 md:pl-0 md:opacity-100 opacity-0 top-[-400px]">
+      <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
+        <a href="./index.html" class="text-2xl hover:text-orange-500">HOME
+        </a>
+      </li>
+      <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
+        <a href="./program.html" class="text-2xl hover:text-orange-500">PROGRAM</a>
+      </li>
+      <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
+        <a href="info.html" class="text-2xl hover:text-orange-500">INFO</a>
+      </li>
+      <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
+        <a href="./contact.html" class="text-2xl hover:text-orange-500">CONTACT</a>
+      </li>
+    </ul>
+  </nav>
 
-        <div class="p-2 text-white flex flex-col justify-center items-center">
-          <div
-            class="flex flex-col justify-center bg-black ring-4 ring-mm-orange rounded-lg"
-          >
-            <form
-              class="flex flex-col justify-center items-center text-xs md:text-lg"
-              id="join"
-            >
-              <p class="text-md">Which movie do you want to chat about?</p>
-              <div class="mb-3 p-2 text-sm flex flex-row items-center">
-                <input
-                  type="radio"
-                  id="1"
-                  name="room"
-                  value="Kulkurin valssi"
-                  required
-                />
-                <label class="pr-4 pl-1" for="1">Kulkurin valssi</label>
-                <input type="radio" id="2" name="room" value="Terminator 2" />
-                <label class="pr-4 pl-1" for="2">Terminator 2</label>
-                <input
-                  type="radio"
-                  id="3"
-                  name="room"
-                  value="Uuno Espanjassa"
-                />
-                <label class="pr-4 pl-1" for="3">Uuno Espanjassa</label>
-                <input type="radio" id="4" name="room" value="Scarface" />
-                <label class="pr-4 pl-1" for="4">Scarface</label>
-                <input type="radio" id="5" name="room" value="Die Hard" />
-                <label class="pr-4 pl-1" for="5">Die Hard</label>
+  <div id="display" class="text-2xl text-white flex justify-center"></div>
+  <section class="flex items-center mt-52 md:mt-0 justify-center h-full px-2 md:px-12">
+    <div class="flex-col items-center justify-center md:flex w-full md:h-[70%]">
+      <video class="lg:w-[60%] xl:w-[50%] border-4 border-orange-500 rounded-lg" preload="auto"
+        poster="./img/diehard.jpg" autoplay controls muted>
+        <source src="http://195.148.104.124:1935/jakelu/lefaIlta/playlist.m3u8" type="application/x-mpegURL" />
+        <p class="vjs-no-js">
+          To view this video please enable JavaScript, and consider upgrading
+          to a web browser that
+          <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+        </p>
+        <link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet" />
+      </video>
+
+      <div class="p-2 text-white flex flex-col justify-center items-center">
+        <div class=" flex flex-col justify-center bg-black ring-4 ring-mm-orange rounded-lg">
+          <form class="flex flex-col justify-center items-center text-xs md:text-lg" id="join">
+            <p class=" text-md">Which movie do you want to chat about?</p>
+            <div class="mb-3 p-2 text-sm flex flex-row items-center">
+              <input type="radio" id="1" name="room" value="Kulkurin valssi" required />
+              <label class="pr-4 pl-1" for="1">Kulkurin valssi</label>
+              <input type="radio" id="2" name="room" value="Terminator 2" />
+              <label class="pr-4 pl-1" for="2">Terminator 2</label>
+              <input type="radio" id="3" name="room" value="Uuno Espanjassa" />
+              <label class="pr-4 pl-1" for="3">Uuno Espanjassa</label>
+              <input type="radio" id="4" name="room" value="Scarface" />
+              <label class="pr-4 pl-1" for="4">Scarface</label>
+              <input type="radio" id="5" name="room" value="Die Hard" />
+              <label class="pr-4 pl-1" for="5">Die Hard</label>
+            </div>
+            <div class="flex flex-wrap content-center justify-start text-sm">
+              <input class="block  text-sm text-white bg-black rounded-full border-4 border-orange-500 p-3" type="text"
+                id="username" placeholder="Username" />
+              <button class="bg-mm-orange ml-2">Join</button>
+            </div>
+          </form>
+          <div id="roomDiv" class="w-full flex flex-col justify-center items-center">
+            <div class="flex flex-row justify-between items-center w-full">
+
+              <div class="flex-col">
+                <h1 id="roomNumber" class="text-lg font-bold text-mm-orange"></h1>
               </div>
-              <div class="flex flex-wrap content-center justify-start text-sm">
-                <input
-                  class="block text-sm text-white bg-black rounded-full border-4 border-orange-500 p-3"
-                  type="text"
-                  id="username"
-                  placeholder="Username"
-                />
-                <button class="bg-mm-orange ml-2">Join</button>
-              </div>
-            </form>
-            <div
-              id="roomDiv"
-              class="w-full flex flex-col justify-center items-center"
-            >
-              <div class="flex flex-row justify-between items-center w-full">
-                <div class="flex-col">
-                  <h1
-                    id="roomNumber"
-                    class="text-lg font-bold text-mm-orange"
-                  ></h1>
-                </div>
-              </div>
-              <form
-                id="msg-input"
-                class="pt-3 pb-3 flex flex-col w-full items-center"
-              >
-                <div class="flex align-bottom items-center w-full">
-                  <textarea
-                    id="message"
-                    rows="1"
-                    class="block w-full text-sm text-white bg-black rounded-full border-4 border-orange-500 p-3"
-                    placeholder="What's on your mind?"
-                  ></textarea>
-                  <button id="sendMsg" type="submit" hidden></button>
-                </div>
-              </form>
-              <div class="p-2 text-white">
-                <ul
-                  class="text-white justify-start bg-black text-xs md:text-lg break-words ring-4 ring-mm-orange rounded-lg w-auto h-auto"
-                  id="messages"
-                ></ul>
-                <button class="btn-yellow p-2 text-xs" id="leaveBtn">
-                  Exit
+            </div>
+            <form id="msg-input" class="pt-3 pb-3 flex flex-col w-full items-center">
+              <div class="flex align-bottom items-center w-full">
+
+                <textarea id="message" rows="1"
+                  class="block w-full text-sm text-white bg-black rounded-full border-4 border-orange-500 p-3"
+                  placeholder="What's on your mind?"></textarea>
+                <button id="sendMsg" type="submit" hidden>
+
                 </button>
               </div>
+            </form>
+            <div class="p-2 text-white ">
+              <ul class=" text-white justify-start  bg-black text-xs md:text-lg break-words ring-4 ring-mm-orange  rounded-lg
+                  w-auto h-auto" id="messages">
+              </ul>
+              <button class="btn-yellow p-2 text-xs" id="leaveBtn">
+                Exit
+              </button>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
-    <script>
-      let myPlayer = document.querySelector(".video-js");
-      let isMenuOpen = false; // Track the menu state
+  <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
+  <script>
+    let myPlayer = document.querySelector(".video-js");
+    let isMenuOpen = false; // Track the menu state
 
-      videojs(myPlayer, {
-        autoplay: true,
-        controls: true,
-        muted: true,
-        preload: true,
-        responsive: true,
-        userActions: {
-          doubleClick: true,
-        },
-      });
-    </script>
-  </body>
+    videojs(myPlayer, {
+      autoplay: true,
+      controls: true,
+      muted: true,
+      preload: true,
+      responsive: true,
+      userActions: {
+        doubleClick: true,
+      },
+    });
+  </script>
+</body>
+
 </html>

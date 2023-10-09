@@ -1,4 +1,4 @@
-const socket = io();
+const socket = io("https://mdds-server-jj.northeurope.cloudapp.azure.com/");
 const joinForm = document.querySelector("#join");
 const roomDiv = document.querySelector("#roomDiv");
 const writeMsg = document.querySelector("#msg-input");
