@@ -20,7 +20,7 @@
 
 </head>
 
-<body class="bg-black min-h-screen">
+<body class="bg-black h-screen font-roboto-mono">
   <nav class="p-5 shadow md:flex w-[100%] md:items-center  md:justify-between z-20 sticky ">
 
     <div class="flex justify-between items-center ">
@@ -70,55 +70,57 @@
         </video>
       </div>
     </div>
+    <div class=" flex flex-col items-center justify-center sm:h-auto my-5">
+      <div class="flex w-[750px] flex-row justify-center items-center  md:h-[70%] p-2 text-white">
+        <div class="flex flex-col  bg-black items-center justify-center rounded-lg">
+          <form id="join" class="flex mt-4 flex-col items-center text-xs md:text-lg">
+            <p class="text-md">Which movie do you want to chat about?</p>
+            <!-- Combined the radio buttons and labels for clarity -->
+            <div class="flex flex-row text-sm mb-3 p-2">
+              <label class="justify-center item p-4 flex flex-col">
+                <input type="radio" name="room" value="Kulkurin valssi" required>Kulkurin valssi
+              </label>
+              <label class="justify-center p-4 flex flex-col">
+                <input type="radio" name="room" value="Terminator 2">Terminator 2
+              </label>
+              <label class="justify-center p-4 flex flex-col">
+                <input type="radio" name="room" value="Uuno Espanjassa">Uuno Espanjassa
+              </label>
+              <label class="justify-center p-4 flex flex-col">
+                <input type="radio" name="room" value="Scarface">Scarface
+              </label>
+              <label class="justify-center p-4 flex flex-col">
+                <input type="radio" name="room" value="Die Hard">Die Hard
+              </label>
+            </div>
+        </div>
+      </div>
 
-    <div class="flex flex-row justify-center items-center w-full md:h-[70%] p-2 text-white">
-      <div class="flex flex-col  bg-black items-center justify-center rounded-lg">
-        <form id="join" class="flex mt-4 flex-col items-center text-xs md:text-lg">
-          <p class="text-md">Which movie do you want to chat about?</p>
-          <!-- Combined the radio buttons and labels for clarity -->
-          <div class="flex flex-row text-sm mb-3 p-2">
-            <label class="justify-center item p-4 flex flex-col">
-              <input type="radio" name="room" value="Kulkurin valssi" required>Kulkurin valssi
-            </label>
-            <label class="justify-center p-4 flex flex-col">
-              <input type="radio" name="room" value="Terminator 2">Terminator 2
-            </label>
-            <label class="justify-center p-4 flex flex-col">
-              <input type="radio" name="room" value="Uuno Espanjassa">Uuno Espanjassa
-            </label>
-            <label class="justify-center p-4 flex flex-col">
-              <input type="radio" name="room" value="Scarface">Scarface
-            </label>
-            <label class="justify-center p-4 flex flex-col">
-              <input type="radio" name="room" value="Die Hard">Die Hard
-            </label>
-          </div>
-          <div class="flex flex-col align-bottom justify-center items-center w-full">
+      <div class="flex flex-col align-bottom justify-center items-center">
 
-            <input class="text-center text-sm rounded-full border-4 border-orange-500 p-3 mb-2" type="text"
-              id="username" placeholder="Username">
-            <button class="flex flex-auto justify-center items-center text-sm p-2 mt-2">
-              <ion-icon style="font-size: 42px; color: rgb(249, 115, 22);"
-                name="arrow-forward-circle-outline"></ion-icon>
-            </button>
-          </div>
+        <input class="text-center text-sm rounded-full border-4 border-orange-500 p-3 mb-2" type="text" id="username"
+          placeholder="Username">
+        <button class="flex flex-auto justify-center items-center text-sm p-2 mt-2">
+          <ion-icon style="font-size: 42px; color: rgb(249, 115, 22);" name="arrow-forward-circle-outline"></ion-icon>
+        </button>
+      </div>
+      </form>
+
+      <div id="roomDiv" class="flex message-container overflow-y overflow-x-auto flex-col items-center ">
+        <h1 id="roomNumber" class="text-lg font-bold text-white mb-3"></h1>
+        <form id="msg-input" class="hidden pt-3 pb-3 flex flex-col  items-center">
+          <textarea id="message" rows="1"
+            class="w-full text-sm bg-black text-white rounded-full flex-col items-center border-4 border-orange-500 p-3 mb-3"
+            placeholder="What's on your mind?"></textarea>
+          <button id="sendMsg" type="submit" hidden></button>
         </form>
-
-        <div id="roomDiv" class="flex flex-col items-center w-full">
-          <h1 id="roomNumber" class="text-lg font-bold text-black mb-3"></h1>
-          <form id="msg-input" class="hidden pt-3 pb-3 flex flex-col w-full items-center">
-            <textarea id="message" rows="1"
-              class="w-full text-sm bg-black rounded-full flex-col items-center border-4 border-orange-500 p-3 mb-3"
-              placeholder="What's on your mind?"></textarea>
-            <button id="sendMsg" type="submit" hidden></button>
-          </form>
-          <ul class="text-xs md:text-lg break-words p-2 ring-4 ring-mm-orange rounded-lg w-auto h-auto overflow-hidden"
-            id="messages"></ul>
-          <div class="flex align-bottom justify-center items-center w-full">
-            <button id="leaveBtn" class=" hidden text-sm p-2 mt-2">
-              <ion-icon style="font-size: 42px; color: rgb(249, 115, 22);" name="close-circle-outline"></ion-icon>
-            </button>
-          </div>
+        <ul
+          class="text-xs md:max-h-60 max-h-28 overflow-scroll scroll-auto md:text-lg overflow-y break-words p-2 text-white ring-4 ring-mm-orange rounded-lg w-auto h-auto "
+          id="messages" style="word-wrap: break-word;"></ul>
+        <div class="flex align-bottom justify-center items-center w-full">
+          <button id="leaveBtn" class=" hidden text-sm p-2 mt-2">
+            <ion-icon style="font-size: 42px; color: rgb(249, 115, 22);" name="close-circle-outline"></ion-icon>
+          </button>
         </div>
       </div>
     </div>

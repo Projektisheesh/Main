@@ -18,13 +18,13 @@ joinForm.addEventListener("submit", (event) => {
   const username = document.getElementById("username");
   const room = document.querySelector('input[name="room"]:checked').value;
   socket.emit("join", username.value, room);
+  event.preventDefault();
   username.value = "";
   joinForm.style.display = "none";
   roomDiv.style.display = "block";
   writeMsg.style.display = "block"; // Show text field
   leaveBtn.style.display = "block"; // Show leave button
   roomNumber.innerHTML = "You are chatting about " + room;
-  event.preventDefault();
 });
 
 leaveBtn.addEventListener("click", (event) => {
@@ -47,8 +47,11 @@ writeMsg.addEventListener("submit", (event) => {
 
 socket.on("new message", (msg, username) => {
   const item = document.createElement("li");
-  item.innerHTML = `${username}: </b>` + msg;
+  item.innerHTML =
+    `<span style="color: rgb(249, 115, 22);">${username}</span>: ` + msg;
   document.getElementById("messages").appendChild(item);
+  document.getElementById("messages").scrollTop =
+    document.getElementById("messages").scrollHeight;
 });
 
 socket.on("response", (msg) => {
