@@ -17,24 +17,22 @@
 
 <body class="bg-black">
 
-
-    <nav class="p-5 shadow md:flex w-[100%] md:items-center  md:justify-between z-30 sticky ">
+    <nav class="p-5 shadow md:flex w-[100%] md:items-center  md:justify-between z-20 sticky ">
 
         <div class="flex justify-between items-center ">
-            <span class=" cursor-pointer text-white font-sans">
-                <a href="index.html">
+            <span class=" cursor-pointer text-white">
+                <a href="./index.html">
                     <img class="h-10 xs:h-12 sm:h-14 lg:h-16 xl:h-20  inline transform hover:scale-105 ease-out duration-1000"
                         src="./img/header.png" alt="Logo">
                 </a>
             </span>
 
-            <span class=" text-3xl cursor-pointer mx-2 md:hidden block text-white">
+            <span class="text-3xl cursor-pointer mx-2 md:hidden block text-white ">
                 <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
             </span>
         </div>
-
         <ul
-            class="text-center mr-8 md:flex md:items-center z-[-1] bg-black md:static absolute text-white w-[100%] h-[100vh] md:h-[50px] left-0 md:w-auto md:py-0  md:pl-0  md:opacity-100 opacity-0 top-[-400px] ">
+            class="text-center mr-8 md:flex md:items-center hidden bg-black md:static absolute text-white w-[100%] h-[100vh] md:h-[50px] left-0 md:w-auto md:py-0 md:pl-0 md:opacity-100">
             <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
                 <a href="./index.html" class="text-2xl  hover:text-orange-500  ">HOME
                 </a>
@@ -50,6 +48,7 @@
             </li>
 
         </ul>
+
     </nav>
 
     <div class="relative w-full h-[400px] overflow-hidden">

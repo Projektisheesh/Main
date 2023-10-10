@@ -16,63 +16,57 @@
   <script src="./js/menu.js"></script>
   <script defer src="chat.js"></script>
   <script defer src="./js/nowPlaying.js"></script>
-  <link href="./videojs-matrix.css" rel="stylesheet" />
+  <link href="public/videojs-matrix.css" rel="stylesheet" />
 
 </head>
 
 <body class="bg-black">
-  <nav class="p-5 shadow md:flex w-full md:items-center md:justify-between z-50 sticky top-0 bg-black">
-    <div class="flex justify-between items-center">
-      <span class="cursor-pointer text-white">
+  <nav class="p-5 shadow md:flex w-[100%] md:items-center  md:justify-between z-20 sticky ">
+
+    <div class="flex justify-between items-center ">
+      <span class=" cursor-pointer text-white">
         <a href="./index.html">
-          <img class="h-10 xs:h-12 sm:h-14 lg:h-16 xl:h-20 inline transform hover:scale-105 ease-out duration-1000"
-            src="./img/header.png" alt="Logo" />
+          <img class="h-10 xs:h-12 sm:h-14 lg:h-16 xl:h-20  inline transform hover:scale-105 ease-out duration-1000"
+            src="./img/header.png" alt="Logo">
         </a>
       </span>
-      <span class="text-3xl cursor-pointer mx-2 md:hidden block text-white">
+
+      <span class="text-3xl cursor-pointer mx-2 md:hidden block text-white ">
         <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
       </span>
     </div>
     <ul
-      class="text-center mr-8 md:flex md:items-center z-[-1] bg-black md:static absolute text-white w-[100%] h-[100vh] md:h-[50px] left-0 md:w-auto md:py-0 md:pl-0 md:opacity-100 opacity-0 top-[-400px]">
+      class="text-center mr-8 md:flex md:items-center hidden bg-black md:static absolute text-white w-[100%] h-[100vh] md:h-[50px] left-0 md:w-auto md:py-0 md:pl-0 md:opacity-100">
       <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
-        <a href="./index.html" class="text-2xl hover:text-orange-500">HOME
+        <a href="./index.html" class="text-2xl  hover:text-orange-500  ">HOME
         </a>
       </li>
-      <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
-        <a href="./program.html" class="text-2xl hover:text-orange-500">PROGRAM</a>
+      <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in ">
+        <a href="./program.html" class="text-2xl  hover:text-orange-500  ">PROGRAM</a>
       </li>
       <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
-        <a href="info.html" class="text-2xl hover:text-orange-500">INFO</a>
+        <a href="info.html" class="text-2xl hover:text-orange-500  ">INFO</a>
       </li>
-      <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
-        <a href="./contact.html" class="text-2xl hover:text-orange-500">CONTACT</a>
+      <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in ">
+        <a href="./contact.html" class="text-2xl  hover:text-orange-500  ">CONTACT</a>
       </li>
+
     </ul>
+
   </nav>
 
   <div id="display" class="text-2xl text-white flex justify-center"></div>
   <div class=" flex items-center justify-center sm:h-auto my-5">
     <div class=" w-[750px] ">
-      <video
-          id="my-video"
-          class="video-js border-4 border-orange-500 rounded-lg"
-          controls
-          preload="auto"
-          width="100%"
-          height="70%"
-          data-setup='{"fluid": true}'
-        >
+      <video id="my-video" class="video-js vjs-theme-fantasy vjs-fluid" preload="auto" muted
+        data-setup='{"fluid" : true}'>
         <source src="http://195.148.104.124:1935/jakelu/lefaIlta/playlist.m3u8" type="application/x-mpegURL" />
         <source src="./video/offline-video.mp4" type="video/mp4" />
-          <p class="vjs-no-js">
-            To view this video please enable JavaScript, and consider upgrading
-            to a web browser that
-            <a href="https://videojs.com/html5-video-support/" target="_blank"
-              >supports HTML5 video</a
-            >
-          </p>
-        </video>
+        <p class="vjs-no-js">
+          To view this video please enable JavaScript, and consider upgrading to a web browser that
+          <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+        </p>
+      </video>
     </div>
   </div>
 
@@ -151,12 +145,13 @@
       width: 750,
       controls: true,
       autoplay: false,
-      preload: "auto", 
+      preload: "auto",
+      poster: "../img/poster.jpeg",
       inactivityTimeout: 0,
       livetracker: {
         trackingThreshold: 0.5,
       },
-      
+      playbackRates: [0.5, 1, 1.5, 2],
       liveui: true,
     });
   </script>

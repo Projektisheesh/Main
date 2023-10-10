@@ -1,41 +1,34 @@
 <!DOCTYPE html>
 <html class="h-full">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./videojs-matrix.css" rel="stylesheet" />
     <link href="../dist/output.css" rel="stylesheet" />
     <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./js/menu.js"></script>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+</head>
+<style>
     @media (max-width: 640px) {
-      /* Adjust the button's position for mobile screens */
-      #scroll-button {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 9999;
-        /* Ensure the button appears on top of other content */
-      }
-    }
-  </style>
 
-  <body class="bg-black flex flex-col min-h-screen">
+        /* Adjust the button's position for mobile screens */
+        #scroll-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            /* Ensure the button appears on top of other content */
+        }
+    }
+</style>
+
+<body class="bg-black flex flex-col min-h-screen">
     <nav class="p-5 shadow md:flex w-[100%] md:items-center  md:justify-between z-20 sticky ">
 
         <div class="flex justify-between items-center ">
@@ -51,7 +44,7 @@
             </span>
         </div>
         <ul
-            class="text-center mr-8 md:flex md:items-center z-[-1] bg-black md:static absolute text-white w-[100%] h-[100vh] md:h-[50px] left-0 md:w-auto md:py-0  md:pl-0  md:opacity-100 opacity-0 top-[-400px] ">
+            class="text-center mr-8 md:flex md:items-center hidden bg-black md:static absolute text-white w-[100%] h-[100vh] md:h-[50px] left-0 md:w-auto md:py-0 md:pl-0 md:opacity-100">
             <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
                 <a href="./index.html" class="text-2xl  hover:text-orange-500  ">HOME
                 </a>
@@ -71,47 +64,31 @@
     </nav>
 
     <section class="flex flex-grow ">
-      <div
-        class="flex-col flex items-center justify-center w-4/5 mx-auto">
-        <div class="text-center mt-2">
-          <div
-            id="countdown"
-            class="text-3xl font-semibold text-orange-500 mb-4"
-          >
-            <h1 class="text-2xl font-semibold mb-4 text-white">
-              Avajaiset alkaa!
-            </h1>
-            <span id="days" class="px-2">00</span>
-            <span>:</span>
-            <span id="hours" class="px-2">00</span>
-            <span>:</span>
-            <span id="minutes" class="px-2">00</span>
-            <span>:</span>
-            <span id="seconds" class="px-2">00</span>
-          </div>
+        <div class="flex-col flex items-center justify-center w-4/5 mx-auto">
+            <div class="text-center mt-2">
+                <div id="countdown" class="text-3xl font-semibold text-orange-500 mb-4">
+                    <h1 class="text-2xl font-semibold mb-4 text-white">
+                        Avajaiset alkaa!
+                    </h1>
+                    <span id="days" class="px-2">00</span>
+                    <span>:</span>
+                    <span id="hours" class="px-2">00</span>
+                    <span>:</span>
+                    <span id="minutes" class="px-2">00</span>
+                    <span>:</span>
+                    <span id="seconds" class="px-2">00</span>
+                </div>
+            </div>
+            <video id="my-video" class="video-js border-4 border-orange-500 rounded-lg" controls preload="auto"
+                width="100%" height="70%" data-setup='{"fluid": true}'>
+                <source src="http://195.148.104.124:1935/jakelu/jakfilms/playlist.m3u8" type="application/x-mpegURL" />
+                <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider upgrading
+                    to a web browser that
+                    <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                </p>
+            </video>
         </div>
-        <video
-          id="my-video"
-          class="video-js border-4 border-orange-500 rounded-lg"
-          controls
-          preload="auto"
-          width="100%"
-          height="70%"
-          data-setup='{"fluid": true}'
-        >
-          <source
-            src="http://195.148.104.124:1935/jakelu/jakfilms/playlist.m3u8"
-            type="application/x-mpegURL"
-          />
-          <p class="vjs-no-js">
-            To view this video please enable JavaScript, and consider upgrading
-            to a web browser that
-            <a href="https://videojs.com/html5-video-support/" target="_blank"
-              >supports HTML5 video</a
-            >
-          </p>
-        </video>
-      </div>
     </section>
     <footer class="p-4 bg-black  font-roboto-mono pt-20">
         <div class="mx-auto max-w-screen-xl text-center">
@@ -135,59 +112,60 @@
 
 
     <script>
-      // Set the target date and time for the countdown (YYYY-MM-DD HH:MM:SS)
-      const targetDate = new Date("2023-10-11 14:00:00").getTime();
+        // Set the target date and time for the countdown (YYYY-MM-DD HH:MM:SS)
+        const targetDate = new Date("2023-10-11 14:00:00").getTime();
 
-      // Update the countdown every second
-      const countdown = setInterval(function () {
-        const currentDate = new Date().getTime();
-        const timeLeft = targetDate - currentDate;
+        // Update the countdown every second
+        const countdown = setInterval(function () {
+            const currentDate = new Date().getTime();
+            const timeLeft = targetDate - currentDate;
 
-        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-        const hours = Math.floor(
-          (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor(
+                (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            );
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-        // Display the countdown
-        document.getElementById("days").innerText = days
-          .toString()
-          .padStart(2, "0");
-        document.getElementById("hours").innerText = hours
-          .toString()
-          .padStart(2, "0");
-        document.getElementById("minutes").innerText = minutes
-          .toString()
-          .padStart(2, "0");
-        document.getElementById("seconds").innerText = seconds
-          .toString()
-          .padStart(2, "0");
+            // Display the countdown
+            document.getElementById("days").innerText = days
+                .toString()
+                .padStart(2, "0");
+            document.getElementById("hours").innerText = hours
+                .toString()
+                .padStart(2, "0");
+            document.getElementById("minutes").innerText = minutes
+                .toString()
+                .padStart(2, "0");
+            document.getElementById("seconds").innerText = seconds
+                .toString()
+                .padStart(2, "0");
 
-        // If the countdown is over, display a message
-        if (timeLeft < 0) {
-          clearInterval(countdown);
-          document.getElementById("countdown").innerText = "Countdown Expired";
-        }
-      }, 1000);
+            // If the countdown is over, display a message
+            if (timeLeft < 0) {
+                clearInterval(countdown);
+                document.getElementById("countdown").innerText = "Countdown Expired";
+            }
+        }, 1000);
     </script>
 
     <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
     <script>
-      let myPlayer = document.querySelector(".video-js");
-      let isMenuOpen = false;
+        let myPlayer = document.querySelector(".video-js");
+        let isMenuOpen = false;
 
-      videojs(myPlayer, {
-        controls: true,
-        muted: true,
-        preload: true,
-        responsive: true,
-        userActions: {
-          doubleClick: true,
-        },
-      });
+        videojs(myPlayer, {
+            controls: true,
+            muted: true,
+            preload: true,
+            responsive: true,
+            userActions: {
+                doubleClick: true,
+            },
+        });
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
-  </body>
+</body>
+
 </html>
