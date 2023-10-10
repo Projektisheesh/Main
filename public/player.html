@@ -60,10 +60,10 @@
     <div id="display" class="text-2xl text-white flex justify-center"></div>
     <div class=" flex items-center justify-center sm:h-auto my-5">
       <div class=" w-[750px] ">
-        <video id="my-video" class="video-js border-4 border-orange-500 rounded-lg" controls preload="auto" width="100%"
-          height="70%" data-setup='{"fluid": true}'>
+        <video id="my-video" class="video-js border-4 border-orange-500 rounded-lg" poster="./img/opening.jpg" controls
+          preload="auto" width="100%" height="70%" data-setup='{"fluid": true}'>
           <source src="http://195.148.104.124:1935/jakelu/lefaIlta/playlist.m3u8" type="application/x-mpegURL" />
-          <source src="./video/offline-video.mp4" type="video/mp4" />
+
           <p class="vjs-no-js">
             To view this video please enable JavaScript, and consider upgrading
             to a web browser that
@@ -98,34 +98,34 @@
           </div>
           <div class="flex flex-col align-bottom justify-center items-center w-full">
 
-            <input class="text-center text-sm rounded-full border-4 border-orange-500 p-3 mb-2" type="text"
-              id="username" placeholder="Username">
-            <button class="flex flex-auto justify-center items-center text-sm p-2 mt-2">
-              <ion-icon style="font-size: 42px; color: rgb(249, 115, 22);"
-                name="arrow-forward-circle-outline"></ion-icon>
-            </button>
-          </div>
-        </form>
-
-        <div id="roomDiv" class="flex flex-col items-center ">
-          <h1 id="roomNumber" class="text-lg font-bold text-black mb-3"></h1>
-          <form id="msg-input" class="hidden  pt-3 pb-3 flex flex-col w-full items-center">
-            <textarea id="message" rows="1"
-              class="w-full text-sm  text-white bg-black rounded-full flex-col items-center border-4 border-orange-500 p-3 mb-3"
-              placeholder="What's on your mind?"></textarea>
-            <button id="sendMsg" type="submit" hidden></button>
+              <input class="text-center text-sm rounded-full border-4 border-orange-500 p-3 mb-2" type="text"
+                id="username" placeholder="Username">
+              <button class="flex flex-auto justify-center items-center text-sm p-2 mt-2">
+                <ion-icon style="font-size: 42px; color: rgb(249, 115, 22);"
+                  name="arrow-forward-circle-outline"></ion-icon>
+              </button>
+            </div>
           </form>
-          <ul
-            class="text-xs md:max-h-64 overflow-y-scroll md:min-w-96 max-w-xs max-h-24 text-white md:text-lg break-words p-2 ring-4 ring-mm-orange rounded-lg w-auto h-auto overflow-hidden"
-            id="messages"></ul>
-          <div class="flex align-bottom justify-center items-center w-full">
-            <button id="leaveBtn" class=" hidden text-sm p-2 mt-2">
-              <ion-icon style="font-size: 42px; color: rgb(249, 115, 22);" name="close-circle-outline"></ion-icon>
-            </button>
+
+          <div id="roomDiv" class="flex flex-col items-center ">
+            <h1 id="roomNumber" class="text-lg font-bold text-black mb-3"></h1>
+            <form id="msg-input" class="hidden  pt-3 pb-3 flex flex-col w-full items-center">
+              <textarea id="message" rows="1"
+                class="w-full text-sm  text-white bg-black rounded-full flex-col items-center border-4 border-orange-500 p-3 mb-3"
+                placeholder="What's on your mind?"></textarea>
+              <button id="sendMsg" type="submit" hidden></button>
+            </form>
+            <ul
+              class="text-xs md:max-h-64 overflow-y-scroll md:min-w-96 max-w-xs max-h-24 text-white md:text-lg break-words p-2 ring-4 ring-mm-orange rounded-lg w-auto h-auto overflow-hidden"
+              id="messages"></ul>
+            <div class="flex align-bottom justify-center items-center w-full">
+              <button id="leaveBtn" class=" hidden text-sm p-2 mt-2">
+                <ion-icon style="font-size: 42px; color: rgb(249, 115, 22);" name="close-circle-outline"></ion-icon>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
   </section>
 
   <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
@@ -140,7 +140,6 @@
       controls: true,
       autoplay: false,
       preload: "auto",
-      poster: "../img/poster.jpeg",
       inactivityTimeout: 0,
       livetracker: {
         trackingThreshold: 0.5,
