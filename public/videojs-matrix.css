@@ -38,3 +38,12 @@ background-color: black;
     background-color: black;
 }
 
+.vjs-playback-rate > .vjs-menu-button, .vjs-playback-rate .vjs-playback-rate-value {
+    background-color: black;
+}
+.video-js .vjs-progress-control {
+    background-color: black;
+}
+.video-js .vjs-time-control {
+    background-color: black;
+}
