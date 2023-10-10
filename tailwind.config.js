@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./public/**/*.{html,js}", "./src/**/*.{html,js}",  "./node_modules/flowbite/**/*.js"],
+  content: [
+    "./public/**/*.{html,js}",
+    "./src/**/*.{html,js}",
+    "./node_modules/flowbite/**/*.js",
+  ],
   theme: {
     screens: {
       xs: "390px",
@@ -16,18 +20,14 @@ module.exports = {
         "bg-image": "url('../dist/img/bg.jpeg')",
       },
       fontFamily: {
-
         body: ["Roboto Mono", "monospace"],
-
       },
       colors: {
-        "mm-orange": "rgba(255,92,0,0)",
-        "mm-black": "rgba(0, 0, 0, 0)",
+        "mm-orange": "rgba(255,92,0,1)",
+        "mm-black": "rgba(0, 0, 0, 1)",
         "mm-white": "rgba(83,86,90)",
       },
     },
   },
-  plugins: [
-    require('flowbite/plugin')
-],
+  plugins: [require("flowbite/plugin")],
 };

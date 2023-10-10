@@ -1,4 +1,6 @@
-const socket = io("https://mdds-server-jj.northeurope.cloudapp.azure.com/");
+//const socket = io("https://mdds-server-jj.northeurope.cloudapp.azure.com/");
+const socket = io();
+
 const joinForm = document.querySelector("#join");
 const roomDiv = document.querySelector("#roomDiv");
 const writeMsg = document.querySelector("#msg-input");
@@ -43,7 +45,6 @@ socket.on("new message", (msg, username) => {
   const item = document.createElement("li");
   item.innerHTML = `${username}: </b>` + msg;
   document.getElementById("messages").appendChild(item);
-  showMessagesList();
 });
 
 socket.on("response", (msg) => {

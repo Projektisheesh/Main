@@ -7,7 +7,6 @@ app.use(express.static("public"));
 app.use("/dist", express.static("dist"));
 app.use("/img", express.static("public"));
 
-
 const users = [];
 
 io.on("connection", (socket) => {
@@ -60,6 +59,6 @@ io.on("connection", (socket) => {
   });
 });
 
-http.listen(3000, () => {
+http.listen(5502, () => {
   console.log("port is 5502");
 });
