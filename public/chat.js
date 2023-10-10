@@ -1,4 +1,5 @@
 //const socket = io("https://mdds-server-jj.northeurope.cloudapp.azure.com/");
+
 const socket = io();
 
 const joinForm = document.querySelector("#join");
@@ -8,6 +9,11 @@ const leaveBtn = document.querySelector("#leaveBtn");
 const roomNumber = document.querySelector("#roomNumber");
 const messages = document.getElementById("messages");
 
+// Hide leave button, text field, and chat room initially
+leaveBtn.style.display = "none";
+writeMsg.style.display = "none";
+roomDiv.style.display = "none";
+
 joinForm.addEventListener("submit", (event) => {
   const username = document.getElementById("username");
   const room = document.querySelector('input[name="room"]:checked').value;
@@ -15,9 +21,8 @@ joinForm.addEventListener("submit", (event) => {
   username.value = "";
   joinForm.style.display = "none";
   roomDiv.style.display = "block";
-  writeMsg.style.display = "block";
-  leaveBtn.style.display = "block";
-  roomNumber.style.display = "block";
+  writeMsg.style.display = "block"; // Show text field
+  leaveBtn.style.display = "block"; // Show leave button
   roomNumber.innerHTML = "You are chatting about " + room;
   event.preventDefault();
 });
@@ -27,9 +32,8 @@ leaveBtn.addEventListener("click", (event) => {
   socket.emit("leave");
   joinForm.style.display = "block";
   roomDiv.style.display = "none";
-  writeMsg.style.display = "none";
+  writeMsg.style.display = "none"; // Hide text field
   leaveBtn.style.display = "none";
-  roomNumber.style.display = "none";
   messages.innerHTML = "";
 });
 
