@@ -5,18 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link href="./videojs-matrix.css" rel="stylesheet">
     <link href="../dist/output.css" rel="stylesheet">
-
     <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./js/menu.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
-
-
-
+   
 </head>
 <style>
     @media (max-width: 640px) {
@@ -30,21 +27,6 @@
             /* Ensure the button appears on top of other content */
         }
 
-        .vjs-omateema {
-            color: #00ff00;
-        }
-
-        /* Change the border of the big play button. */
-        .vjs-omateema .vjs-big-play-button {
-            border-color: #00ff00;
-        }
-
-        /* Change the color of various "bars". */
-        .vjs-omateema .vjs-volume-level,
-        .vjs-omateema .vjs-play-progress,
-        .vjs-omateema .vjs-slider-bar {
-            background: #00ff00;
-        }
     }
 </style>
 
@@ -67,22 +49,22 @@
         </div>
 
         <ul
-            class="text-center mr-8 md:flex md:items-center z-[-1] bg-black md:static absolute text-white w-[100%] h-[100vh] md:h-[50px] left-0 md:w-auto md:py-0  md:pl-0  md:opacity-100 opacity-0 top-[-400px] ">
-            <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
-                <a href="./index.html" class="text-2xl  hover:text-orange-500  ">HOME
+        class="text-center mr-8 md:flex md:items-center z-[-1] bg-black md:static absolute text-white w-[100%] h-[25vh] md:h-[50px] left-0 md:w-auto md:py-0  md:pl-0  md:opacity-100 opacity-0 top-[-400px] ">
+        <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
+            <a href="./index.html" class="text-2xl  hover:text-orange-500  ">HOME
                 </a>
-            </li>
-            <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in ">
-                <a href="./program.html" class="text-2xl  hover:text-orange-500  ">PROGRAM</a>
-            </li>
-            <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
-                <a href="info.html" class="text-2xl hover:text-orange-500  ">INFO</a>
-            </li>
-            <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in ">
-                <a href="./contact.html" class="text-2xl  hover:text-orange-500  ">CONTACT</a>
-            </li>
-
-        </ul>
+        </li>
+        <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in ">
+            <a href="./program.html" class="text-2xl  hover:text-orange-500  ">PROGRAM</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in">
+            <a href="info.html" class="text-2xl hover:text-orange-500  ">INFO</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0 hover:translate-y-1 transform-gpu duration-75 ease-in ">
+            <a href="./contact.html" class="text-2xl  hover:text-orange-500  ">CONTACT</a>
+        </li>
+        
+    </ul>
     </nav>
 
 
@@ -94,8 +76,8 @@
 
 
 
-        <div class="flex-col flex items-center  justify-center md:h-[70%] md:w-[70%] px-12 md:p-12">
-            <div class="text-center mt-6 ">
+        <div class="flex-col flex items-center  justify-center md:h-[80%] md:w-[80%] lg:w-[60%] sm:w-[100%]  px-12 md:p-12">
+            <div class="text-center mt-2 ">
                 <div id="countdown" class="text-3xl font-semibold text-orange-500 mb-4">
                     <h1 class="text-2xl font-semibold mb-4 text-white ">Avajaiset alkaa!</h1>
                     <span id="days" class="px-2">00</span>
@@ -108,16 +90,25 @@
                 </div>
 
             </div>
-            <video class=" border-4 border-orange-500 rounded-lg" controls loop muted>
-                <source src="./video/M09-1317.mp4" type="video/mp4" />
-                <p class="vjs-no-js">
-                    To view this video please enable JavaScript, and consider upgrading to a
-                    web browser that
-                    <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+            <video
+            id="my-video"
+            class="video-js border-4 border-orange-500 rounded-lg"
+            controls
+            preload="auto"
+            width="100%"
+            height="70%"
+            data-setup='{"fluid": true}'
+          >
+            <source src="http://195.148.104.124:1935/jakelu/jakfilms/playlist.m3u8" type="application/x-mpegURL" />
+            <p class="vjs-no-js">
+              To view this video please enable JavaScript, and consider upgrading to a
+              web browser that
+              <a href="https://videojs.com/html5-video-support/" target="_blank"
+                >supports HTML5 video</a
+              >
+            </p>
+          </video>
 
-                </p>
-                <link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet">
-            </video>
 
 
 
@@ -147,7 +138,7 @@
 
 
         </footer>
-
+    </section>
 
 
 
@@ -184,61 +175,32 @@
 
 
 
-    </section>
+    
 
 
 
-    <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
+<script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
     <script>
+      
         let myPlayer = document.querySelector(".video-js");
-        let isMenuOpen = false; // Track the menu state
+        let isMenuOpen = false; 
+    
 
-        myPlayer.classList.add("vjs-omateema");
-
+    
         videojs(myPlayer, {
-            autoplay: true,
-            loop: true,
             controls: true,
             muted: true,
             preload: true,
             responsive: true,
             userActions: {
                 doubleClick: true
-            }
+            },
+           
         });
-
-
-
-
     </script>
+    
 
-    <script>
-        function toggleButtonsVisibility() {
-            const isMobileView = window.innerWidth <= 640; // Adjust the width as needed
-            const prevButton = document.querySelector('[data-carousel-prev]');
-            const nextButton = document.querySelector('[data-carousel-next]');
-
-            if (isMobileView) {
-                prevButton.style.display = 'none'; // Hide the previous button
-                nextButton.style.display = 'none'; // Hide the next button
-            } else {
-                prevButton.style.display = 'block'; // Show the previous button
-                nextButton.style.display = 'block'; // Show the next button
-            }
-        }
-
-        // Initially toggle button visibility on page load
-        toggleButtonsVisibility();
-
-        // Add a resize event listener to toggle buttons on window resize
-        window.addEventListener('resize', toggleButtonsVisibility);
-    </script>
-
-
-
-
-
-
+  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
 
 
