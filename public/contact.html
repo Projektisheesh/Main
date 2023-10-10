@@ -176,22 +176,22 @@
 
         let navbarHamburger = document.getElementById('navbar-hamburger');
         let backButton = document.querySelector('#navbar-hamburger button');
-        let isMenuOpen = false; // Track the menu state
+        let isMenuOpen = false; 
 
 
 
         function toggleMenu() {
             if (!isMenuOpen) {
-                navbarHamburger.classList.add('translate-x-0'); // Add the class to show the menu
+                navbarHamburger.classList.add('translate-x-0');
             } else {
-                navbarHamburger.classList.remove('translate-x-0'); // Remove the class to hide the menu
+                navbarHamburger.classList.remove('translate-x-0'); 
             }
-            isMenuOpen = !isMenuOpen; // Toggle the menu state
+            isMenuOpen = !isMenuOpen;
         }
 
         function goBack() {
-            navbarHamburger.classList.remove('translate-x-0'); // Remove the class to hide the menu
-            isMenuOpen = false; // Update the menu state
+            navbarHamburger.classList.remove('translate-x-0'); 
+            isMenuOpen = false; 
         }
     </script>
 
