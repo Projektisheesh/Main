@@ -4,6 +4,9 @@ const http = require("http").createServer(app);
 const io = require("socket.io")(http);
 
 app.use(express.static("public"));
+app.use("/dist", express.static("dist"));
+app.use("/img", express.static("public"));
+
 
 const users = [];
 

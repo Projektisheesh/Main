@@ -1,12 +1,14 @@
-const targetDate = new Date('2023-10-11T09:00:00');
+const targetDate = new Date('2023-10-09T17:00:00Z'); // Z at the end denotes UTC timezone
+
 
 const movies = [
-    { name: "Die Hard", duration: 115000 },
-    { name: "Uuno Espanjassa", duration: 236000 },
-    { name: "Terminator", duration: 82000 },
-    { name: "Kulkurin Valssi", duration: 172000 },
-    { name: "Scarface", duration: 43000 }
+    { name: "Morningafter", duration: 218000 },
+    { name: "Mikko_EVTEKtoAlaska", duration: 81000 },
+    { name: "Museo_olohuoneena", duration: 173000 },
+    { name: "opiskelijaelämää2009", duration: 206000 },
+    { name: "Democompo", duration: 1188000 }
 ];
+
 
 let currentMovieIndex = 0;
 

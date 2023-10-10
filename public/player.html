@@ -7,7 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="/dist/output.css" rel="stylesheet" />
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link href="https://unpkg.com/@videojs/themes@1/dist/fantasy/index.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/customplayer.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="/socket.io/socket.io.js"></script>
   <script src="./js/menu.js"></script>
@@ -47,18 +50,25 @@
   </nav>
 
   <div id="display" class="text-2xl text-white flex justify-center"></div>
-  <section class="flex items-center mt-52 md:mt-0 justify-center h-full px-2 md:px-12">
-    <div class="flex-col items-center justify-center md:flex w-full md:h-[70%]">
-      <video class="lg:w-[60%] xl:w-[50%] border-4 border-orange-500 rounded-lg" preload="auto"
-        poster="./img/diehard.jpg" autoplay controls muted>
+  <div class=" flex items-center justify-center sm:h-auto my-5">
+    <div class=" w-[750px] ">
+      <video id="my-video" class="video-js vjs-theme-fantasy vjs-fluid" preload="auto" muted
+        data-setup='{"fluid" : true}'>
         <source src="http://195.148.104.124:1935/jakelu/lefaIlta/playlist.m3u8" type="application/x-mpegURL" />
+        <source src="./video/offline-video.mp4" type="video/mp4" />
         <p class="vjs-no-js">
-          To view this video please enable JavaScript, and consider upgrading
-          to a web browser that
+          To view this video please enable JavaScript, and consider upgrading to a web browser that
           <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
         </p>
-        <link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet" />
       </video>
+    </div>
+  </div>
+
+
+
+  <section class="flex items-center md:mt-0 justify-center h-full px-2 md:px-12">
+    <div class="flex-col items-center justify-center md:flex w-full md:h-[70%]">
+
 
       <div class="p-2 text-white flex flex-col justify-center items-center">
         <div class="flex flex-col justify-center bg-black ring-4 ring-mm-orange rounded-lg">
@@ -113,17 +123,22 @@
   <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
   <script>
     let myPlayer = document.querySelector(".video-js");
-    let isMenuOpen = false; // Track the menu state
+
+
+    console.log(myPlayer);
 
     videojs(myPlayer, {
-      autoplay: true,
+      width: 750,
       controls: true,
-      muted: true,
-      preload: true,
-      responsive: true,
-      userActions: {
-        doubleClick: true,
+      autoplay: false,
+      preload: "auto",
+      poster: "../img/poster.jpeg",
+      inactivityTimeout: 0,
+      livetracker: {
+        trackingThreshold: 0.5,
       },
+      playbackRates: [0.5, 1, 1.5, 2],
+      liveui: true,
     });
   </script>
 </body>
