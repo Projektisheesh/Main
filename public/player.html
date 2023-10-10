@@ -5,7 +5,9 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="/dist/output.css" rel="stylesheet" />
+  <link href="./videojs-matrix.css" rel="stylesheet" />
+  <link href="css/output.css" rel="stylesheet" />
+
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -16,11 +18,10 @@
   <script src="./js/menu.js"></script>
   <script defer src="chat.js"></script>
   <script defer src="./js/nowPlaying.js"></script>
-  <link href="./videojs-matrix.css" rel="stylesheet" />
 
 </head>
 
-<body class="bg-black h-screen font-roboto-mono">
+<body class="bg-black flex flex-col min-h-screen font-roboto-mono">
   <nav class="p-5 shadow md:flex w-[100%] md:items-center  md:justify-between z-20 sticky ">
 
     <div class="flex justify-between items-center ">
@@ -60,10 +61,9 @@
     <div id="display" class="text-2xl text-white flex justify-center"></div>
     <div class=" flex items-center justify-center sm:h-auto my-5">
       <div class=" w-[750px] ">
-        <video id="my-video" class="video-js border-4 border-orange-500 rounded-lg" poster="./img/opening.jpg" controls
+        <video id="my-video" class="video-js border-4 border-orange-500 rounded-lg " poster="./img/opening.jpg" controls
           preload="auto" width="100%" height="70%" data-setup='{"fluid": true}'>
-          <source src="http://195.148.104.124:1935/jakelu/lefaIlta/playlist.m3u8" type="application/x-mpegURL" />
-
+          <source src="http://195.148.104.124:1935/jakelu/projektiesitys/playlist.m3u8" type="application/x-mpegURL" />
           <p class="vjs-no-js">
             To view this video please enable JavaScript, and consider upgrading
             to a web browser that
@@ -73,59 +73,57 @@
       </div>
     </div>
 
-
     <div class="flex flex-row justify-center items-center w-full md:h-[70%] p-2 ">
-      <div class="flex flex-col  bg-black items-center justify-center rounded-lg">
-        <form id="join" class="flex mt-4 flex-col items-center text-xs md:text-lg">
-          <p class="text-md">Which movie do you want to chat about?</p>
-          <!-- Combined the radio buttons and labels for clarity -->
-          <div class="flex text-white flex-row text-sm mb-3 p-2">
-            <label class="justify-center item p-4 flex flex-col">
-              <input type="radio" name="room" value="Kulkurin valssi" required>Morning after
-            </label>
-            <label class="justify-center p-4 flex flex-col">
-              <input type="radio" name="room" value="Terminator 2">Mikko to Alaska
-            </label>
-            <label class="justify-center p-4 flex flex-col">
-              <input type="radio" name="room" value="Uuno Espanjassa">Museo olohuoneena
-            </label>
-            <label class="justify-center p-4 flex flex-col">
-              <input type="radio" name="room" value="Scarface">Opiskelija elämää
-            </label>
-            <label class="justify-center p-4 flex flex-col">
-              <input type="radio" name="room" value="Die Hard">Democompo
-            </label>
-          </div>
-          <div class="flex flex-col align-bottom justify-center items-center w-full">
+      <form id="join" class="flex  flex-col justify-center items-center text-xs md:text-lg">
+        <p class="text-md">Which movie do you want to chat about?</p>
+        <!-- Combined the radio buttons and labels for clarity -->
+        <div class="flex flex-col  text-white text-center text-sm mb-3 p-4">
+          <label class="justify-center item flex flex-col">
+            <input type="radio" name="room" value="Morning after">Morning after
+          </label>
+          <label class="justify-center flex mt-2 flex-col">
+            <input type="radio" name="room" value="Opiskelijaelämää 2009">Opiskelijaelämää 2009
+          </label>
+          <label class="justify-center flex mt-2 flex-col">
+            <input type="radio" name="room" value="Museo olohuoneena" required>Museo olohuoneena
+          </label>
+          <label class="justify-center flex mt-2 flex-col">
+            <input type="radio" name="room" value="Mikko: EVTEK to Alaska">Mikko: EVTEK to Alaska
+          </label>
+          <label class="justify-center flex mt-2 flex-col">
+            <input type="radio" name="room" value="Democompo">Democompo
+          </label>
+        </div>
+        <div class="flex flex-col align-bottom justify-center items-center w-full">
 
-              <input class="text-center text-sm rounded-full border-4 border-orange-500 p-3 mb-2" type="text"
-                id="username" placeholder="Username">
-              <button class="flex flex-auto justify-center items-center text-sm p-2 mt-2">
-                <ion-icon style="font-size: 42px; color: rgb(249, 115, 22);"
-                  name="arrow-forward-circle-outline"></ion-icon>
-              </button>
-            </div>
-          </form>
+          <input
+            class="text-center text-sm rounded-full justify-center items-center border-4 border-orange-500 p-3 mb-2"
+            type="text" id="username" placeholder="Username">
+          <button class="flex flex-auto justify-center items-center text-sm p-2 mt-2">
+            <ion-icon style="font-size: 42px; color: rgb(249, 115, 22);" name="arrow-forward-circle-outline"></ion-icon>
+          </button>
+        </div>
+      </form>
 
-          <div id="roomDiv" class="flex flex-col items-center ">
-            <h1 id="roomNumber" class="text-lg font-bold text-black mb-3"></h1>
-            <form id="msg-input" class="hidden  pt-3 pb-3 flex flex-col w-full items-center">
-              <textarea id="message" rows="1"
-                class="w-full text-sm  text-white bg-black rounded-full flex-col items-center border-4 border-orange-500 p-3 mb-3"
-                placeholder="What's on your mind?"></textarea>
-              <button id="sendMsg" type="submit" hidden></button>
-            </form>
-            <ul
-              class="text-xs md:max-h-64 overflow-y-scroll md:min-w-96 max-w-xs max-h-24 text-white md:text-lg break-words p-2 ring-4 ring-mm-orange rounded-lg w-auto h-auto overflow-hidden"
-              id="messages"></ul>
-            <div class="flex align-bottom justify-center items-center w-full">
-              <button id="leaveBtn" class=" hidden text-sm p-2 mt-2">
-                <ion-icon style="font-size: 42px; color: rgb(249, 115, 22);" name="close-circle-outline"></ion-icon>
-              </button>
-            </div>
-          </div>
+      <div id="roomDiv" class="flex flex-row justify-center items-center ">
+        <h1 id="roomNumber" class="text-lg font-bold text-black mb-3"></h1>
+        <form id="msg-input" class="hidden  pt-3 pb-3 flex flex-col w-full justify-center items-center">
+          <textarea id="message" rows="1"
+            class="w-full text-sm  text-white bg-black rounded-full flex-col justify-center items-center border-4 border-orange-500 p-3 mb-3"
+            placeholder="What's on your mind?"></textarea>
+          <button id="sendMsg" type="submit" hidden></button>
+        </form>
+        <ul
+          class="text-xs md:max-h-64 overflow-y-scroll justify-center items-center md:min-w-96 md:max-w-xl w-screen max-h-36 text-white md:text-lg break-words p-2 "
+          id="messages"></ul>
+        <div class="flex align-bottom justify-center items-center w-full">
+          <button id="leaveBtn" class=" hidden justify-center items-center text-sm p-2 mt-2">
+            <ion-icon style="font-size: 42px; color: rgb(249, 115, 22);" name="close-circle-outline"></ion-icon>
+          </button>
         </div>
       </div>
+    </div>
+    </div>
   </section>
 
   <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
@@ -140,6 +138,7 @@
       controls: true,
       autoplay: false,
       preload: "auto",
+      poster: "../img/poster.jpeg",
       inactivityTimeout: 0,
       livetracker: {
         trackingThreshold: 0.5,
