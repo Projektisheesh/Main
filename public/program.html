@@ -38,7 +38,6 @@
 
 <body class="bg-black">
 
-
     <nav class="p-5 shadow md:flex w-[100%] md:items-center  md:justify-between z-20 sticky ">
 
         <div class="flex justify-between items-center ">
@@ -276,25 +275,25 @@
         </script>
 
         <script>
-            function toggleButtonsVisibility() {
-                const isMobileView = window.innerWidth <= 640; // Adjust the width as needed
-                const prevButton = document.querySelector("[data-carousel-prev]");
-                const nextButton = document.querySelector("[data-carousel-next]");
-
-                if (isMobileView) {
-                    prevButton.style.display = "none"; // Hide the previous button
-                    nextButton.style.display = "none"; // Hide the next button
-                } else {
-                    prevButton.style.display = "block"; // Show the previous button
-                    nextButton.style.display = "block"; // Show the next button
-                }
-            }
-
-            // Initially toggle button visibility on page load
-            toggleButtonsVisibility();
-
-            // Add a resize event listener to toggle buttons on window resize
-            window.addEventListener("resize", toggleButtonsVisibility);
+            /* function toggleButtonsVisibility() {
+                  const isMobileView = window.innerWidth <= 640; // Adjust the width as needed
+                  const prevButton = document.querySelector("[data-carousel-prev]");
+                  const nextButton = document.querySelector("[data-carousel-next]");
+  
+                  if (isMobileView) {
+                      prevButton.style.display = "none"; // Hide the previous button
+                      nextButton.style.display = "none"; // Hide the next button
+                  } else {
+                      prevButton.style.display = "block"; // Show the previous button
+                      nextButton.style.display = "block"; // Show the next button
+                  }
+              }
+  
+              // Initially toggle button visibility on page load
+              toggleButtonsVisibility();
+  
+              // Add a resize event listener to toggle buttons on window resize
+              window.addEventListener("resize", toggleButtonsVisibility); */
         </script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
