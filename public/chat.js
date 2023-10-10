@@ -47,9 +47,10 @@ writeMsg.addEventListener("submit", (event) => {
 
 socket.on("new message", (msg, username) => {
   const item = document.createElement("li");
-  item.innerHTML =
-    `<span style="color: rgb(249, 115, 22);">${username}</span>: ` + msg;
+  item.innerHTML = `<span style="color: orange;">${username}</span>: ` + msg;
   document.getElementById("messages").appendChild(item);
+
+  // Autoscroll to the bottom
   document.getElementById("messages").scrollTop =
     document.getElementById("messages").scrollHeight;
 });
