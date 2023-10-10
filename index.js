@@ -59,6 +59,6 @@ io.on("connection", (socket) => {
   });
 });
 
-http.listen(3000, () => {
+http.listen(5502, () => {
   console.log("port is 5502");
 });
