@@ -78,9 +78,9 @@
                     <span id="seconds" class="px-2">00</span>
                 </div>
             </div>
-            <video id="my-video" class="video-js border-4 border-orange-500 rounded-lg "poster="./img/opening.jpg" controls preload="auto"
-                width="100%" height="70%" data-setup='{"fluid": true}'>
-                <source src="http://195.148.104.124:1935/jakelu/jakfilms/playlist.m3u8" type="application/x-mpegURL" />
+            <video id="my-video" class="video-js border-4 border-orange-500 rounded-lg " poster="./img/opening.jpg"
+                controls preload="auto" width="100%" height="70%" data-setup='{"fluid": true}'>
+                <source src="http://195.148.104.124:1935/jakelu/lefaIlta/playlist.m3u8" type="application/x-mpegURL" />
                 <p class="vjs-no-js">
                     To view this video please enable JavaScript, and consider upgrading
                     to a web browser that
@@ -110,9 +110,9 @@
     </footer>
 
 
-    <script> 
-         const targetDate = new Date("2023-10-11 14:00:00").getTime();
-         const countdown = setInterval(function () {
+    <script>
+        const targetDate = new Date("2023-10-11 14:00:00").getTime();
+        const countdown = setInterval(function () {
             const currentDate = new Date().getTime();
             const timeLeft = targetDate - currentDate;
 
@@ -123,7 +123,7 @@
             const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-          
+
             document.getElementById("days").innerText = days
                 .toString()
                 .padStart(2, "0");
@@ -137,7 +137,7 @@
                 .toString()
                 .padStart(2, "0");
 
-           
+
             if (timeLeft < 0) {
                 clearInterval(countdown);
                 document.getElementById("countdown").innerText = "Countdown Expired";
