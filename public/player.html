@@ -73,7 +73,7 @@
       </div>
     </div>
 
-    <div class="flex flex-row justify-center items-center md:h-[70%] p-2 ">
+    <div class="flex flex-row justify-center items-center w-full md:h-[70%] p-2 ">
       <form id="join" class="flex  flex-col justify-center items-center text-xs md:text-lg">
         <p class="text-md">Which movie do you want to chat about?</p>
         <!-- Combined the radio buttons and labels for clarity -->
@@ -105,16 +105,16 @@
         </div>
       </form>
 
-      <div id="roomDiv" class="flex flex-row  justify-center items-center ">
+      <div id="roomDiv" class="flex flex-row justify-center items-center ">
         <h1 id="roomNumber" class="text-lg font-bold text-black mb-3"></h1>
         <form id="msg-input" class="hidden pt-3 pb-3 flex flex-col w-full justify-center items-center">
           <textarea id="message" rows="1"
-            class="text-sm  text-white bg-black rounded-full flex flex-col justify-center items-center border-4 border-orange-500 p-3 mb-3"
+            class="w-full text-sm  text-white bg-black rounded-full flex-col justify-center items-center border-4 border-orange-500 p-3 mb-3"
             placeholder="What's on your mind?"></textarea>
           <button id="sendMsg" type="submit" hidden></button>
         </form>
         <ul
-          class="text-xs md:max-h-52 overflow-y-scroll justify-center items-center md:min-w-96 md:max-w-xl w-screen max-h-44 text-white md:text-lg break-words p-2 "
+          class="text-xs md:max-h-96 overflow-y-scroll justify-center items-center md:min-w-96 md:max-w-xl w-screen max-h-44 text-white md:text-lg break-words p-2 "
           id="messages"></ul>
         <div class="flex align-bottom justify-center items-center w-full">
           <button id="leaveBtn" class=" hidden justify-center items-center text-sm p-2 mt-2">
@@ -125,7 +125,6 @@
     </div>
     </div>
   </section>
-
   <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
   <script>
     let myPlayer = document.querySelector(".video-js");
