@@ -107,16 +107,16 @@
 
       <div id="roomDiv" class="flex flex-row  justify-center items-center ">
         <h1 id="roomNumber" class="text-lg font-bold text-black mb-3"></h1>
-        <form id="msg-input" class="hidden pt-3 pb-3 flex flex-col  justify-center items-center">
+        <form id="msg-input" class="hidden pt-3 pb-3 flex flex-col w-full justify-center items-center">
           <textarea id="message" rows="1"
             class="text-sm  text-white bg-black rounded-full flex flex-col justify-center items-center border-4 border-orange-500 p-3 mb-3"
             placeholder="What's on your mind?"></textarea>
           <button id="sendMsg" type="submit" hidden></button>
         </form>
         <ul
-          class="text-xs md:max-h-52 overflow-y-scroll flex flex-col justify-center items-center md:min-w-96 md:max-w-xl w-screen max-h-44 text-white md:text-lg break-words p-2 "
+          class="text-xs md:max-h-52 overflow-y-scroll justify-center items-center md:min-w-96 md:max-w-xl w-screen max-h-44 text-white md:text-lg break-words p-2 "
           id="messages"></ul>
-        <div class="flex flex-col align-bottom justify-center items-center ">
+        <div class="flex align-bottom justify-center items-center w-full">
           <button id="leaveBtn" class=" hidden justify-center items-center text-sm p-2 mt-2">
             <ion-icon style="font-size: 42px; color: rgb(249, 115, 22);" name="close-circle-outline"></ion-icon>
           </button>
